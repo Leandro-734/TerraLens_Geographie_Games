@@ -1,0 +1,2710 @@
+[
+  {
+    "id": "paris-fr",
+    "name": "Paris",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "population": 2100000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/960px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg"
+  },
+  {
+    "id": "london-gb",
+    "name": "London",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 51.5074,
+    "lon": -0.1278,
+    "population": 8900000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/960px-London_Skyline_%28125508655%29.jpeg"
+  },
+  {
+    "id": "madrid-es",
+    "name": "Madrid",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 40.4168,
+    "lon": -3.7038,
+    "population": 3200000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Plaza_Mayor_De_Madrid_%28215862629%29_edited.jpeg/960px-Plaza_Mayor_De_Madrid_%28215862629%29_edited.jpeg"
+  },
+  {
+    "id": "barcelona-es",
+    "name": "Barcelona",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 41.3851,
+    "lon": 2.1734,
+    "population": 1600000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Aerial_view_of_Barcelona%2C_Spain_%2851227309370%29_edited.jpg/960px-Aerial_view_of_Barcelona%2C_Spain_%2851227309370%29_edited.jpg"
+  },
+  {
+    "id": "rome-it",
+    "name": "Rome",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "population": 2800000,
+    "continent": "Europe",
+    "aliases": [
+      "Roma"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg/960px-Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg"
+  },
+  {
+    "id": "milan-it",
+    "name": "Milan",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 45.4642,
+    "lon": 9.19,
+    "population": 1400000,
+    "continent": "Europe",
+    "aliases": [
+      "Milano"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Milan_-_Scala_-_Facade.jpg/960px-Milan_-_Scala_-_Facade.jpg"
+  },
+  {
+    "id": "venice-it",
+    "name": "Venice",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "population": 260000,
+    "continent": "Europe",
+    "aliases": [
+      "Venezia"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Venezia_aerial_view.jpg/960px-Venezia_aerial_view.jpg"
+  },
+  {
+    "id": "berlin-de",
+    "name": "Berlin",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 52.52,
+    "lon": 13.405,
+    "population": 3600000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg/960px-Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg"
+  },
+  {
+    "id": "munich-de",
+    "name": "Munich",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 48.1351,
+    "lon": 11.582,
+    "population": 1500000,
+    "continent": "Europe",
+    "aliases": [
+      "München",
+      "Muenchen"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/960px-Stadtbild_M%C3%BCnchen.jpg"
+  },
+  {
+    "id": "hamburg-de",
+    "name": "Hamburg",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 53.5511,
+    "lon": 9.9937,
+    "population": 1800000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hamburg%2C_Landungsbr%C3%BCcken_--_2016_--_3131-7.jpg/960px-Hamburg%2C_Landungsbr%C3%BCcken_--_2016_--_3131-7.jpg"
+  },
+  {
+    "id": "amsterdam-nl",
+    "name": "Amsterdam",
+    "country": "Netherlands",
+    "countryCode": "NL",
+    "lat": 52.3676,
+    "lon": 4.9041,
+    "population": 900000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png/960px-Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png"
+  },
+  {
+    "id": "vienna-at",
+    "name": "Vienna",
+    "country": "Austria",
+    "countryCode": "AT",
+    "lat": 48.2082,
+    "lon": 16.3738,
+    "population": 1900000,
+    "continent": "Europe",
+    "aliases": [
+      "Wien"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/960px-Schoenbrunn_philharmoniker_2012.jpg"
+  },
+  {
+    "id": "prague-cz",
+    "name": "Prague",
+    "country": "Czechia",
+    "countryCode": "CZ",
+    "lat": 50.0755,
+    "lon": 14.4378,
+    "population": 1300000,
+    "continent": "Europe",
+    "aliases": [
+      "Praha"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Prague_%286365119737%29.jpg/960px-Prague_%286365119737%29.jpg"
+  },
+  {
+    "id": "budapest-hu",
+    "name": "Budapest",
+    "country": "Hungary",
+    "countryCode": "HU",
+    "lat": 47.4979,
+    "lon": 19.0402,
+    "population": 1700000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg/960px-View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg"
+  },
+  {
+    "id": "warsaw-pl",
+    "name": "Warsaw",
+    "country": "Poland",
+    "countryCode": "PL",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "population": 1800000,
+    "continent": "Europe",
+    "aliases": [
+      "Warszawa"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Aleja_Niepdleglosci_Warsaw_2022_aerial_%28cropped%29.jpg/960px-Aleja_Niepdleglosci_Warsaw_2022_aerial_%28cropped%29.jpg"
+  },
+  {
+    "id": "lisbon-pt",
+    "name": "Lisbon",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "lat": 38.7223,
+    "lon": -9.1393,
+    "population": 550000,
+    "continent": "Europe",
+    "aliases": [
+      "Lisboa"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Lisboa_-_Portugal_%2852597836992%29.jpg/960px-Lisboa_-_Portugal_%2852597836992%29.jpg"
+  },
+  {
+    "id": "athens-gr",
+    "name": "Athens",
+    "country": "Greece",
+    "countryCode": "GR",
+    "lat": 37.9838,
+    "lon": 23.7275,
+    "population": 660000,
+    "continent": "Europe",
+    "aliases": [
+      "Athina"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Monastiraki_Square_and_Acropolis_in_Athens_%2844149181684%29.jpg/960px-Monastiraki_Square_and_Acropolis_in_Athens_%2844149181684%29.jpg"
+  },
+  {
+    "id": "dublin-ie",
+    "name": "Dublin",
+    "country": "Ireland",
+    "countryCode": "IE",
+    "lat": 53.3498,
+    "lon": -6.2603,
+    "population": 550000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Dublin_-_aerial_-_2025-07-07_01.jpg/960px-Dublin_-_aerial_-_2025-07-07_01.jpg"
+  },
+  {
+    "id": "brussels-be",
+    "name": "Brussels",
+    "country": "Belgium",
+    "countryCode": "BE",
+    "lat": 50.8503,
+    "lon": 4.3517,
+    "population": 1200000,
+    "continent": "Europe",
+    "aliases": [
+      "Bruxelles",
+      "Brussel"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Grand_Place_Bruselas_2.jpg/960px-Grand_Place_Bruselas_2.jpg"
+  },
+  {
+    "id": "zurich-ch",
+    "name": "Zurich",
+    "country": "Switzerland",
+    "countryCode": "CH",
+    "lat": 47.3769,
+    "lon": 8.5417,
+    "population": 430000,
+    "continent": "Europe",
+    "aliases": [
+      "Zürich"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Altstadt_Z%C3%BCrich_2015.jpg/960px-Altstadt_Z%C3%BCrich_2015.jpg"
+  },
+  {
+    "id": "stockholm-se",
+    "name": "Stockholm",
+    "country": "Sweden",
+    "countryCode": "SE",
+    "lat": 59.3293,
+    "lon": 18.0686,
+    "population": 970000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Royal_Dramatic_Theatre_Stockholm.jpg/960px-Royal_Dramatic_Theatre_Stockholm.jpg"
+  },
+  {
+    "id": "copenhagen-dk",
+    "name": "Copenhagen",
+    "country": "Denmark",
+    "countryCode": "DK",
+    "lat": 55.6761,
+    "lon": 12.5683,
+    "population": 800000,
+    "continent": "Europe",
+    "aliases": [
+      "København",
+      "Kobenhavn"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/2018_-_Christiansborg_from_the_Marble_Bridge.jpg/960px-2018_-_Christiansborg_from_the_Marble_Bridge.jpg"
+  },
+  {
+    "id": "oslo-no",
+    "name": "Oslo",
+    "country": "Norway",
+    "countryCode": "NO",
+    "lat": 59.9139,
+    "lon": 10.7522,
+    "population": 700000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Nationaltheatret_evening.jpg/960px-Nationaltheatret_evening.jpg"
+  },
+  {
+    "id": "helsinki-fi",
+    "name": "Helsinki",
+    "country": "Finland",
+    "countryCode": "FI",
+    "lat": 60.1699,
+    "lon": 24.9384,
+    "population": 650000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Suomenlinna_%28cropped%29.jpg/960px-Suomenlinna_%28cropped%29.jpg"
+  },
+  {
+    "id": "reykjavik-is",
+    "name": "Reykjavik",
+    "country": "Iceland",
+    "countryCode": "IS",
+    "lat": 64.1466,
+    "lon": -21.9426,
+    "population": 130000,
+    "continent": "Europe",
+    "aliases": [
+      "Reykjavík"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg/960px-Reykjav%C3%ADk%2C_view_from_Hallgr%C3%ADmskirkja_%282%29.jpg"
+  },
+  {
+    "id": "moscow-ru",
+    "name": "Moscow",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 55.7558,
+    "lon": 37.6173,
+    "population": 12500000,
+    "continent": "Europe",
+    "aliases": [
+      "Moskva"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg/960px-Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg"
+  },
+  {
+    "id": "saint-petersburg-ru",
+    "name": "Saint Petersburg",
+    "country": "Russia",
+    "countryCode": "RU",
+    "lat": 59.9311,
+    "lon": 30.3609,
+    "population": 5400000,
+    "continent": "Europe",
+    "aliases": [
+      "St Petersburg",
+      "Sankt-Peterburg"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg/960px-Spb_06-2017_img20_StMichael_Castle_%28cropped%29.jpg"
+  },
+  {
+    "id": "istanbul-tr",
+    "name": "Istanbul",
+    "country": "Turkey",
+    "countryCode": "TR",
+    "lat": 41.0082,
+    "lon": 28.9784,
+    "population": 15500000,
+    "continent": "Europe",
+    "aliases": [
+      "Istambul"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Historical_peninsula_and_modern_skyline_of_Istanbul.jpg/960px-Historical_peninsula_and_modern_skyline_of_Istanbul.jpg"
+  },
+  {
+    "id": "kyiv-ua",
+    "name": "Kyiv",
+    "country": "Ukraine",
+    "countryCode": "UA",
+    "lat": 50.4501,
+    "lon": 30.5234,
+    "population": 3000000,
+    "continent": "Europe",
+    "aliases": [
+      "Kiev"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/%D0%91%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA_%D0%B7_%D1%85%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%2C_%D1%81%D0%B5%D1%80%D0%BF%D0%B5%D0%BD%D1%8C_2019.jpg/960px-%D0%91%D1%83%D0%B4%D0%B8%D0%BD%D0%BE%D0%BA_%D0%B7_%D1%85%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8%2C_%D1%81%D0%B5%D1%80%D0%BF%D0%B5%D0%BD%D1%8C_2019.jpg"
+  },
+  {
+    "id": "new-york-us",
+    "name": "New York",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 40.7128,
+    "lon": -74.006,
+    "population": 8400000,
+    "continent": "North America",
+    "aliases": [
+      "NYC",
+      "New York City"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/960px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg"
+  },
+  {
+    "id": "los-angeles-us",
+    "name": "Los Angeles",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 34.0522,
+    "lon": -118.2437,
+    "population": 4000000,
+    "continent": "North America",
+    "aliases": [
+      "LA"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hollywood_Sign_%28Zuschnitt%29.jpg/960px-Hollywood_Sign_%28Zuschnitt%29.jpg"
+  },
+  {
+    "id": "chicago-us",
+    "name": "Chicago",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.8781,
+    "lon": -87.6298,
+    "population": 2700000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Chicago_River_ferry_b.jpg/960px-Chicago_River_ferry_b.jpg"
+  },
+  {
+    "id": "san-francisco-us",
+    "name": "San Francisco",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "population": 870000,
+    "continent": "North America",
+    "aliases": [
+      "SF"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/San_Francisco_Downtown_Aerial%2C_August_2025.jpg/960px-San_Francisco_Downtown_Aerial%2C_August_2025.jpg"
+  },
+  {
+    "id": "las-vegas-us",
+    "name": "Las Vegas",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 36.1699,
+    "lon": -115.1398,
+    "population": 650000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Las_Vegas_from_above_%2840064746644%29.jpg/960px-Las_Vegas_from_above_%2840064746644%29.jpg"
+  },
+  {
+    "id": "washington-us",
+    "name": "Washington",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "population": 700000,
+    "continent": "North America",
+    "aliases": [
+      "Washington DC",
+      "Washington, D.C."
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/12-07-13-washington-by-RalfR-08.jpg/960px-12-07-13-washington-by-RalfR-08.jpg"
+  },
+  {
+    "id": "miami-us",
+    "name": "Miami",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 25.7617,
+    "lon": -80.1918,
+    "population": 470000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Villa_Vizcaya_20110228.jpg/960px-Villa_Vizcaya_20110228.jpg"
+  },
+  {
+    "id": "seattle-us",
+    "name": "Seattle",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 47.6062,
+    "lon": -122.3321,
+    "population": 750000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Seattle_Center_as_night_falls.jpg/960px-Seattle_Center_as_night_falls.jpg"
+  },
+  {
+    "id": "boston-us",
+    "name": "Boston",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 42.3601,
+    "lon": -71.0589,
+    "population": 690000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ISH_WC_Boston4.jpg/960px-ISH_WC_Boston4.jpg"
+  },
+  {
+    "id": "houston-us",
+    "name": "Houston",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 29.7604,
+    "lon": -95.3698,
+    "population": 2300000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Texas_medical_center.jpg/960px-Texas_medical_center.jpg"
+  },
+  {
+    "id": "honolulu-us",
+    "name": "Honolulu",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 21.3069,
+    "lon": -157.8583,
+    "population": 350000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/2022_Views_from_Diamond_Head_02.jpg/960px-2022_Views_from_Diamond_Head_02.jpg"
+  },
+  {
+    "id": "toronto-ca",
+    "name": "Toronto",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "population": 2900000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Toronto_Skyline_from_Snake_Island%2C_February_28_2026_%2808%29.jpg/960px-Toronto_Skyline_from_Snake_Island%2C_February_28_2026_%2808%29.jpg"
+  },
+  {
+    "id": "vancouver-ca",
+    "name": "Vancouver",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 49.2827,
+    "lon": -123.1207,
+    "population": 680000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Skyline_of_Vancouver%2C_Canada.jpg/960px-Skyline_of_Vancouver%2C_Canada.jpg"
+  },
+  {
+    "id": "montreal-ca",
+    "name": "Montreal",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 45.5017,
+    "lon": -73.5673,
+    "population": 1700000,
+    "continent": "North America",
+    "aliases": [
+      "Montréal"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Mtl_from_mont_royal_%28cropped%29.jpg/960px-Mtl_from_mont_royal_%28cropped%29.jpg"
+  },
+  {
+    "id": "mexico-city-mx",
+    "name": "Mexico City",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "population": 9000000,
+    "continent": "North America",
+    "aliases": [
+      "Ciudad de México",
+      "CDMX"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg/960px-Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg"
+  },
+  {
+    "id": "havana-cu",
+    "name": "Havana",
+    "country": "Cuba",
+    "countryCode": "CU",
+    "lat": 23.1136,
+    "lon": -82.3666,
+    "population": 2100000,
+    "continent": "North America",
+    "aliases": [
+      "La Habana"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DJI_0197_crp_wiki.jpg/960px-DJI_0197_crp_wiki.jpg"
+  },
+  {
+    "id": "sao-paulo-br",
+    "name": "São Paulo",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "lat": -23.5505,
+    "lon": -46.6333,
+    "population": 12000000,
+    "continent": "South America",
+    "aliases": [
+      "Sao Paulo"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Marginal_Pinheiros_e_Jockey_Club.jpg/960px-Marginal_Pinheiros_e_Jockey_Club.jpg"
+  },
+  {
+    "id": "rio-de-janeiro-br",
+    "name": "Rio de Janeiro",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "lat": -22.9068,
+    "lon": -43.1729,
+    "population": 6700000,
+    "continent": "South America",
+    "aliases": [
+      "Rio"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/960px-Cidade_Maravilhosa.jpg"
+  },
+  {
+    "id": "brasilia-br",
+    "name": "Brasília",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "lat": -15.7939,
+    "lon": -47.8828,
+    "population": 3000000,
+    "continent": "South America",
+    "aliases": [
+      "Brasilia"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Planalto_Central_%28cropped%29.jpg/960px-Planalto_Central_%28cropped%29.jpg"
+  },
+  {
+    "id": "buenos-aires-ar",
+    "name": "Buenos Aires",
+    "country": "Argentina",
+    "countryCode": "AR",
+    "lat": -34.6037,
+    "lon": -58.3816,
+    "population": 3000000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Avenida_9_de_Julio%2C_Buenos_Aires_%2840089810910%29.jpg/960px-Avenida_9_de_Julio%2C_Buenos_Aires_%2840089810910%29.jpg"
+  },
+  {
+    "id": "lima-pe",
+    "name": "Lima",
+    "country": "Peru",
+    "countryCode": "PE",
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "population": 9700000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg/960px-Bas%C3%ADlica_Catedral_Metropolitana_de_Lima_%28cropped%29.jpg"
+  },
+  {
+    "id": "bogota-co",
+    "name": "Bogotá",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "lat": 4.711,
+    "lon": -74.0721,
+    "population": 7400000,
+    "continent": "South America",
+    "aliases": [
+      "Bogota"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Bogota%2C_Colombia_%2836668708290%29.jpg/960px-Bogota%2C_Colombia_%2836668708290%29.jpg"
+  },
+  {
+    "id": "santiago-cl",
+    "name": "Santiago",
+    "country": "Chile",
+    "countryCode": "CL",
+    "lat": -33.4489,
+    "lon": -70.6693,
+    "population": 6200000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Palacio_de_La_Moneda_-_miguelreflex.jpg/960px-Palacio_de_La_Moneda_-_miguelreflex.jpg"
+  },
+  {
+    "id": "caracas-ve",
+    "name": "Caracas",
+    "country": "Venezuela",
+    "countryCode": "VE",
+    "lat": 10.4806,
+    "lon": -66.9036,
+    "population": 1900000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Caracas_desde_el_%C3%A1vila.jpg/960px-Caracas_desde_el_%C3%A1vila.jpg"
+  },
+  {
+    "id": "quito-ec",
+    "name": "Quito",
+    "country": "Ecuador",
+    "countryCode": "EC",
+    "lat": -0.1807,
+    "lon": -78.4678,
+    "population": 2000000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/FACHADA_ASAMBLEA_NACIONAL._QUITO%2C_20_DE_FEBRERO_2020._01.jpg/960px-FACHADA_ASAMBLEA_NACIONAL._QUITO%2C_20_DE_FEBRERO_2020._01.jpg"
+  },
+  {
+    "id": "tokyo-jp",
+    "name": "Tokyo",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 35.6762,
+    "lon": 139.6503,
+    "population": 13900000,
+    "continent": "Asia",
+    "aliases": [
+      "Tōkyō"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/960px-Skyscrapers_of_Shinjuku_2009_January.jpg"
+  },
+  {
+    "id": "osaka-jp",
+    "name": "Osaka",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 34.6937,
+    "lon": 135.5023,
+    "population": 2700000,
+    "continent": "Asia",
+    "aliases": [
+      "Ōsaka"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Osaka_Castle_02bs3200.jpg/960px-Osaka_Castle_02bs3200.jpg"
+  },
+  {
+    "id": "kyoto-jp",
+    "name": "Kyoto",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 35.0116,
+    "lon": 135.7681,
+    "population": 1500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Kiyomizu.jpg/960px-Kiyomizu.jpg"
+  },
+  {
+    "id": "seoul-kr",
+    "name": "Seoul",
+    "country": "South Korea",
+    "countryCode": "KR",
+    "lat": 37.5665,
+    "lon": 126.978,
+    "population": 9700000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg/960px-%EC%A4%91%ED%99%94%EC%A0%84%EC%9D%98_%EB%82%AE.jpg"
+  },
+  {
+    "id": "beijing-cn",
+    "name": "Beijing",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 39.9042,
+    "lon": 116.4074,
+    "population": 21000000,
+    "continent": "Asia",
+    "aliases": [
+      "Peking"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg/960px-Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg"
+  },
+  {
+    "id": "shanghai-cn",
+    "name": "Shanghai",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 31.2304,
+    "lon": 121.4737,
+    "population": 24000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg/960px-Huangpu_Park_20124-Shanghai_%2832208802494%29.jpg"
+  },
+  {
+    "id": "hong-kong-hk",
+    "name": "Hong Kong",
+    "country": "Hong Kong",
+    "countryCode": "HK",
+    "lat": 22.3193,
+    "lon": 114.1694,
+    "population": 7500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Hong_Kong_Skyline_viewed_from_Victoria_Peak.jpg/960px-Hong_Kong_Skyline_viewed_from_Victoria_Peak.jpg"
+  },
+  {
+    "id": "bangkok-th",
+    "name": "Bangkok",
+    "country": "Thailand",
+    "countryCode": "TH",
+    "lat": 13.7563,
+    "lon": 100.5018,
+    "population": 8300000,
+    "continent": "Asia",
+    "aliases": [
+      "Krung Thep"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/4Y1A1159_Bangkok_%2833536795515%29.jpg/960px-4Y1A1159_Bangkok_%2833536795515%29.jpg"
+  },
+  {
+    "id": "singapore-sg",
+    "name": "Singapore",
+    "country": "Singapore",
+    "countryCode": "SG",
+    "lat": 1.3521,
+    "lon": 103.8198,
+    "population": 5600000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Marina_Bay_Singapore-3499.jpg/960px-Marina_Bay_Singapore-3499.jpg"
+  },
+  {
+    "id": "kuala-lumpur-my",
+    "name": "Kuala Lumpur",
+    "country": "Malaysia",
+    "countryCode": "MY",
+    "lat": 3.139,
+    "lon": 101.6869,
+    "population": 1800000,
+    "continent": "Asia",
+    "aliases": [
+      "KL"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bukit_Bintang_junction_in_2024_2.jpg/960px-Bukit_Bintang_junction_in_2024_2.jpg"
+  },
+  {
+    "id": "jakarta-id",
+    "name": "Jakarta",
+    "country": "Indonesia",
+    "countryCode": "ID",
+    "lat": -6.2088,
+    "lon": 106.8456,
+    "population": 10500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bundaran_Hotel_Indonesia_%282025%29.jpg/960px-Bundaran_Hotel_Indonesia_%282025%29.jpg"
+  },
+  {
+    "id": "manila-ph",
+    "name": "Manila",
+    "country": "Philippines",
+    "countryCode": "PH",
+    "lat": 14.5995,
+    "lon": 120.9842,
+    "population": 1800000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Cityscape_of_Manila%2C_2025_%2801%29.jpg/960px-Cityscape_of_Manila%2C_2025_%2801%29.jpg"
+  },
+  {
+    "id": "mumbai-in",
+    "name": "Mumbai",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 19.076,
+    "lon": 72.8777,
+    "population": 12400000,
+    "continent": "Asia",
+    "aliases": [
+      "Bombay"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mumbai_Bandra-Worli_Sea_Link.jpg/960px-Mumbai_Bandra-Worli_Sea_Link.jpg"
+  },
+  {
+    "id": "delhi-in",
+    "name": "Delhi",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 28.7041,
+    "lon": 77.1025,
+    "population": 16000000,
+    "continent": "Asia",
+    "aliases": [
+      "New Delhi"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Jama_Masjid_2011.jpg/960px-Jama_Masjid_2011.jpg"
+  },
+  {
+    "id": "bangalore-in",
+    "name": "Bangalore",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 12.9716,
+    "lon": 77.5946,
+    "population": 8400000,
+    "continent": "Asia",
+    "aliases": [
+      "Bengaluru"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/View_from_Visvesvaraya_Industrial_and_Technological_Museum_%282025%29_02.jpg/960px-View_from_Visvesvaraya_Industrial_and_Technological_Museum_%282025%29_02.jpg"
+  },
+  {
+    "id": "dubai-ae",
+    "name": "Dubai",
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "lat": 25.2048,
+    "lon": 55.2708,
+    "population": 3300000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Burj_Khalifa_2021.jpg/960px-Burj_Khalifa_2021.jpg"
+  },
+  {
+    "id": "abu-dhabi-ae",
+    "name": "Abu Dhabi",
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "lat": 24.4539,
+    "lon": 54.3773,
+    "population": 1500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Abu_dhabi_skylines_2014.jpg/960px-Abu_dhabi_skylines_2014.jpg"
+  },
+  {
+    "id": "doha-qa",
+    "name": "Doha",
+    "country": "Qatar",
+    "countryCode": "QA",
+    "lat": 25.2854,
+    "lon": 51.531,
+    "population": 900000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/The_Pearl_Marina_in_Nov_2013.jpg/960px-The_Pearl_Marina_in_Nov_2013.jpg"
+  },
+  {
+    "id": "riyadh-sa",
+    "name": "Riyadh",
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "lat": 24.7136,
+    "lon": 46.6753,
+    "population": 7000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Riyadh_Skyline.jpg/960px-Riyadh_Skyline.jpg"
+  },
+  {
+    "id": "tehran-ir",
+    "name": "Tehran",
+    "country": "Iran",
+    "countryCode": "IR",
+    "lat": 35.6892,
+    "lon": 51.389,
+    "population": 8700000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/North_of_Tehran_Skyline_view.jpg/960px-North_of_Tehran_Skyline_view.jpg"
+  },
+  {
+    "id": "tel-aviv-il",
+    "name": "Tel Aviv",
+    "country": "Israel",
+    "countryCode": "IL",
+    "lat": 32.0853,
+    "lon": 34.7818,
+    "population": 460000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Sarona_CBD_01_%28cropped%29.jpg/960px-Sarona_CBD_01_%28cropped%29.jpg"
+  },
+  {
+    "id": "jerusalem-il",
+    "name": "Jerusalem",
+    "country": "Israel",
+    "countryCode": "IL",
+    "lat": 31.7683,
+    "lon": 35.2137,
+    "population": 900000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Dome_of_the_Rock_seen_from_the_Mount_of_Olives_%2812395649153%29_%28cropped%29.jpg/960px-Dome_of_the_Rock_seen_from_the_Mount_of_Olives_%2812395649153%29_%28cropped%29.jpg"
+  },
+  {
+    "id": "baghdad-iq",
+    "name": "Baghdad",
+    "country": "Iraq",
+    "countryCode": "IQ",
+    "lat": 33.3152,
+    "lon": 44.3661,
+    "population": 7000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/5628442718_b10fc2c47f_o.jpg/960px-5628442718_b10fc2c47f_o.jpg"
+  },
+  {
+    "id": "karachi-pk",
+    "name": "Karachi",
+    "country": "Pakistan",
+    "countryCode": "PK",
+    "lat": 24.8607,
+    "lon": 67.0011,
+    "population": 14900000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Dolmen_Towers_Karachi.jpg/960px-Dolmen_Towers_Karachi.jpg"
+  },
+  {
+    "id": "taipei-tw",
+    "name": "Taipei",
+    "country": "Taiwan",
+    "countryCode": "TW",
+    "lat": 25.033,
+    "lon": 121.5654,
+    "population": 2600000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Taipei_Skyline_2022.06.29.jpg/960px-Taipei_Skyline_2022.06.29.jpg"
+  },
+  {
+    "id": "ho-chi-minh-city-vn",
+    "name": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "lat": 10.8231,
+    "lon": 106.6297,
+    "population": 9000000,
+    "continent": "Asia",
+    "aliases": [
+      "Saigon",
+      "HCMC"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Ho_Chi_Minh_City_panorama_2019_%28cropped2%29.jpg/960px-Ho_Chi_Minh_City_panorama_2019_%28cropped2%29.jpg"
+  },
+  {
+    "id": "hanoi-vn",
+    "name": "Hanoi",
+    "country": "Vietnam",
+    "countryCode": "VN",
+    "lat": 21.0285,
+    "lon": 105.8542,
+    "population": 8000000,
+    "continent": "Asia",
+    "aliases": [
+      "Hà Nội"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hanoi_skyline_with_Ba_Vi_Mountain.jpg/960px-Hanoi_skyline_with_Ba_Vi_Mountain.jpg"
+  },
+  {
+    "id": "cairo-eg",
+    "name": "Cairo",
+    "country": "Egypt",
+    "countryCode": "EG",
+    "lat": 30.0444,
+    "lon": 31.2357,
+    "population": 9500000,
+    "continent": "Africa",
+    "aliases": [
+      "Al-Qahirah"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Cairo_Opera_House%2C_Al_Hurriyah_Park_and_the_Nile_river_%2814797782354%29.jpg/960px-Cairo_Opera_House%2C_Al_Hurriyah_Park_and_the_Nile_river_%2814797782354%29.jpg"
+  },
+  {
+    "id": "cape-town-za",
+    "name": "Cape Town",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lat": -33.9249,
+    "lon": 18.4241,
+    "population": 4600000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Camps_bay_%2853460319478%29_%28cropped%29.jpg/960px-Camps_bay_%2853460319478%29_%28cropped%29.jpg"
+  },
+  {
+    "id": "johannesburg-za",
+    "name": "Johannesburg",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lat": -26.2041,
+    "lon": 28.0473,
+    "population": 5600000,
+    "continent": "Africa",
+    "aliases": [
+      "Joburg"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Johannesburg_skyline_2017.jpg/960px-Johannesburg_skyline_2017.jpg"
+  },
+  {
+    "id": "nairobi-ke",
+    "name": "Nairobi",
+    "country": "Kenya",
+    "countryCode": "KE",
+    "lat": -1.2921,
+    "lon": 36.8219,
+    "population": 4400000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Nairobi_skyline_from_Gem_Hotel.jpg/960px-Nairobi_skyline_from_Gem_Hotel.jpg"
+  },
+  {
+    "id": "lagos-ng",
+    "name": "Lagos",
+    "country": "Nigeria",
+    "countryCode": "NG",
+    "lat": 6.5244,
+    "lon": 3.3792,
+    "population": 14400000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Tafa_Balewa_Square_%28Onikan%29_in_Lagos._Nigeria.jpg/960px-Tafa_Balewa_Square_%28Onikan%29_in_Lagos._Nigeria.jpg"
+  },
+  {
+    "id": "casablanca-ma",
+    "name": "Casablanca",
+    "country": "Morocco",
+    "countryCode": "MA",
+    "lat": 33.5731,
+    "lon": -7.5898,
+    "population": 3700000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Casa_finance_city_6_%28cropped%29.jpg/960px-Casa_finance_city_6_%28cropped%29.jpg"
+  },
+  {
+    "id": "marrakech-ma",
+    "name": "Marrakech",
+    "country": "Morocco",
+    "countryCode": "MA",
+    "lat": 31.6295,
+    "lon": -7.9811,
+    "population": 930000,
+    "continent": "Africa",
+    "aliases": [
+      "Marrakesh"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pavillon_Menarag%C3%A4rten.jpg/960px-Pavillon_Menarag%C3%A4rten.jpg"
+  },
+  {
+    "id": "addis-ababa-et",
+    "name": "Addis Ababa",
+    "country": "Ethiopia",
+    "countryCode": "ET",
+    "lat": 9.03,
+    "lon": 38.74,
+    "population": 3400000,
+    "continent": "Africa",
+    "aliases": [
+      "Addis Abeba"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Addis_in_night.jpg/960px-Addis_in_night.jpg"
+  },
+  {
+    "id": "accra-gh",
+    "name": "Accra",
+    "country": "Ghana",
+    "countryCode": "GH",
+    "lat": 5.6037,
+    "lon": -0.187,
+    "population": 2500000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Acca.jpg/960px-Acca.jpg"
+  },
+  {
+    "id": "tunis-tn",
+    "name": "Tunis",
+    "country": "Tunisia",
+    "countryCode": "TN",
+    "lat": 36.8065,
+    "lon": 10.1815,
+    "population": 640000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Minaret_et_patio_de_la_mosqu%C3%A9e_Zitouna_au_centre_de_la_M%C3%A9dina_de_Tunis.jpg/960px-Minaret_et_patio_de_la_mosqu%C3%A9e_Zitouna_au_centre_de_la_M%C3%A9dina_de_Tunis.jpg"
+  },
+  {
+    "id": "dakar-sn",
+    "name": "Dakar",
+    "country": "Senegal",
+    "countryCode": "SN",
+    "lat": 14.7167,
+    "lon": -17.4677,
+    "population": 1200000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Dakar-place-de-l%27Ind%C3%A9pendance.jpg/960px-Dakar-place-de-l%27Ind%C3%A9pendance.jpg"
+  },
+  {
+    "id": "algiers-dz",
+    "name": "Algiers",
+    "country": "Algeria",
+    "countryCode": "DZ",
+    "lat": 36.7538,
+    "lon": 3.0588,
+    "population": 2700000,
+    "continent": "Africa",
+    "aliases": [
+      "Alger"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Botanical_Garden_Hamma.jpg/960px-Botanical_Garden_Hamma.jpg"
+  },
+  {
+    "id": "sydney-au",
+    "name": "Sydney",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -33.8688,
+    "lon": 151.2093,
+    "population": 5300000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/960px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg"
+  },
+  {
+    "id": "melbourne-au",
+    "name": "Melbourne",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -37.8136,
+    "lon": 144.9631,
+    "population": 5000000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Melbourne_skyline_sor.jpg/960px-Melbourne_skyline_sor.jpg"
+  },
+  {
+    "id": "brisbane-au",
+    "name": "Brisbane",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -27.4698,
+    "lon": 153.0251,
+    "population": 2500000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Brisbane_CBD_seen_from_Kangaroo_Point%2C_2024%2C_01_%282%29.jpg/960px-Brisbane_CBD_seen_from_Kangaroo_Point%2C_2024%2C_01_%282%29.jpg"
+  },
+  {
+    "id": "perth-au",
+    "name": "Perth",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -31.9505,
+    "lon": 115.8605,
+    "population": 2100000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Perth_CBD_skyline_from_State_War_Memorial_Lookout%2C_2023%2C_04_b.jpg/960px-Perth_CBD_skyline_from_State_War_Memorial_Lookout%2C_2023%2C_04_b.jpg"
+  },
+  {
+    "id": "auckland-nz",
+    "name": "Auckland",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -36.8485,
+    "lon": 174.7633,
+    "population": 1700000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Auckland_skyline_-_May_2024_%282%29.jpg/960px-Auckland_skyline_-_May_2024_%282%29.jpg"
+  },
+  {
+    "id": "wellington-nz",
+    "name": "Wellington",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -41.2865,
+    "lon": 174.7762,
+    "population": 420000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Seddon_Statue_in_Parliament_Grounds.jpg/960px-Seddon_Statue_in_Parliament_Grounds.jpg"
+  },
+  {
+    "id": "manchester-gb",
+    "name": "Manchester",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 53.4808,
+    "lon": -2.2426,
+    "population": 550000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tower_Blocks_over_Knott_Mill%2C_geograph_6866152_by_David_Dixon.jpg/960px-Tower_Blocks_over_Knott_Mill%2C_geograph_6866152_by_David_Dixon.jpg"
+  },
+  {
+    "id": "edinburgh-gb",
+    "name": "Edinburgh",
+    "country": "United Kingdom",
+    "countryCode": "GB",
+    "lat": 55.9533,
+    "lon": -3.1883,
+    "population": 530000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Skyline_of_Edinburgh.jpg/960px-Skyline_of_Edinburgh.jpg"
+  },
+  {
+    "id": "lyon-fr",
+    "name": "Lyon",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 45.764,
+    "lon": 4.8357,
+    "population": 520000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Lyon-part-dieu-2023.jpg/960px-Lyon-part-dieu-2023.jpg"
+  },
+  {
+    "id": "marseille-fr",
+    "name": "Marseille",
+    "country": "France",
+    "countryCode": "FR",
+    "lat": 43.2965,
+    "lon": 5.3698,
+    "population": 870000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Notre-Dame_de_la_Garde_aerial_view_2020.jpeg/960px-Notre-Dame_de_la_Garde_aerial_view_2020.jpeg"
+  },
+  {
+    "id": "naples-it",
+    "name": "Naples",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 40.8518,
+    "lon": 14.2681,
+    "population": 960000,
+    "continent": "Europe",
+    "aliases": [
+      "Napoli"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Napoli_-_Maschio_Angioino_-_202209302342_3.jpg/960px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg"
+  },
+  {
+    "id": "florence-it",
+    "name": "Florence",
+    "country": "Italy",
+    "countryCode": "IT",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "population": 380000,
+    "continent": "Europe",
+    "aliases": [
+      "Firenze"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FirenzeDec092023_01.jpg/960px-FirenzeDec092023_01.jpg"
+  },
+  {
+    "id": "seville-es",
+    "name": "Seville",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 37.3891,
+    "lon": -5.9845,
+    "population": 690000,
+    "continent": "Europe",
+    "aliases": [
+      "Sevilla"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sevilla_Cathedral_-_Southeast.jpg/960px-Sevilla_Cathedral_-_Southeast.jpg"
+  },
+  {
+    "id": "valencia-es",
+    "name": "Valencia",
+    "country": "Spain",
+    "countryCode": "ES",
+    "lat": 39.4699,
+    "lon": -0.3763,
+    "population": 790000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Malvarrosa_Beach%2C_Valencia%2C_Spain_%2829812271043%29.jpg/960px-Malvarrosa_Beach%2C_Valencia%2C_Spain_%2829812271043%29.jpg"
+  },
+  {
+    "id": "porto-pt",
+    "name": "Porto",
+    "country": "Portugal",
+    "countryCode": "PT",
+    "lat": 41.1579,
+    "lon": -8.6291,
+    "population": 240000,
+    "continent": "Europe",
+    "aliases": [
+      "Oporto"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Puente_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_13.JPG/960px-Puente_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2012-05-09%2C_DD_13.JPG"
+  },
+  {
+    "id": "frankfurt-de",
+    "name": "Frankfurt",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 50.1109,
+    "lon": 8.6821,
+    "population": 760000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Frankfurt_Main_August_2020_1.jpg/960px-Frankfurt_Main_August_2020_1.jpg"
+  },
+  {
+    "id": "cologne-de",
+    "name": "Cologne",
+    "country": "Germany",
+    "countryCode": "DE",
+    "lat": 50.9375,
+    "lon": 6.9603,
+    "population": 1080000,
+    "continent": "Europe",
+    "aliases": [
+      "Köln",
+      "Koeln"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kranh%C3%A4user_Cologne%2C_April_2018_-01.jpg/960px-Kranh%C3%A4user_Cologne%2C_April_2018_-01.jpg"
+  },
+  {
+    "id": "geneva-ch",
+    "name": "Geneva",
+    "country": "Switzerland",
+    "countryCode": "CH",
+    "lat": 46.2044,
+    "lon": 6.1432,
+    "population": 200000,
+    "continent": "Europe",
+    "aliases": [
+      "Genève",
+      "Geneve"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Geneve_2005_001_Ork.ch.jpg/960px-Geneve_2005_001_Ork.ch.jpg"
+  },
+  {
+    "id": "bucharest-ro",
+    "name": "Bucharest",
+    "country": "Romania",
+    "countryCode": "RO",
+    "lat": 44.4268,
+    "lon": 26.1025,
+    "population": 1800000,
+    "continent": "Europe",
+    "aliases": [
+      "Bucuresti"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bucharest_University_Square_%28cropped%29.jpg/960px-Bucharest_University_Square_%28cropped%29.jpg"
+  },
+  {
+    "id": "belgrade-rs",
+    "name": "Belgrade",
+    "country": "Serbia",
+    "countryCode": "RS",
+    "lat": 44.7866,
+    "lon": 20.4489,
+    "population": 1380000,
+    "continent": "Europe",
+    "aliases": [
+      "Beograd"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Panorama_Belgrad.jpg/960px-Panorama_Belgrad.jpg"
+  },
+  {
+    "id": "sofia-bg",
+    "name": "Sofia",
+    "country": "Bulgaria",
+    "countryCode": "BG",
+    "lat": 42.6977,
+    "lon": 23.3219,
+    "population": 1240000,
+    "continent": "Europe",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Russian_church_%2837591925970%29.jpg/960px-Russian_church_%2837591925970%29.jpg"
+  },
+  {
+    "id": "philadelphia-us",
+    "name": "Philadelphia",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.9526,
+    "lon": -75.1652,
+    "population": 1580000,
+    "continent": "North America",
+    "aliases": [
+      "Philly"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Philadelphia_skyline_20240528_%28cropped_2-1%29.jpg/960px-Philadelphia_skyline_20240528_%28cropped_2-1%29.jpg"
+  },
+  {
+    "id": "phoenix-us",
+    "name": "Phoenix",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 33.4484,
+    "lon": -112.074,
+    "population": 1680000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Downtown_Phoenix_Aerial_Looking_Northeast.jpg/960px-Downtown_Phoenix_Aerial_Looking_Northeast.jpg"
+  },
+  {
+    "id": "san-diego-us",
+    "name": "San Diego",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 32.7157,
+    "lon": -117.1611,
+    "population": 1420000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/La_Jolla_Shores_view_%28cropped%29.jpg/960px-La_Jolla_Shores_view_%28cropped%29.jpg"
+  },
+  {
+    "id": "dallas-us",
+    "name": "Dallas",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 32.7767,
+    "lon": -96.797,
+    "population": 1340000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/View_of_Dallas_from_Reunion_Tower_August_2015_05.jpg/960px-View_of_Dallas_from_Reunion_Tower_August_2015_05.jpg"
+  },
+  {
+    "id": "atlanta-us",
+    "name": "Atlanta",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 33.749,
+    "lon": -84.388,
+    "population": 500000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/A2ATL20250614-0721_%28cropped%29.jpg/960px-A2ATL20250614-0721_%28cropped%29.jpg"
+  },
+  {
+    "id": "denver-us",
+    "name": "Denver",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.7392,
+    "lon": -104.9903,
+    "population": 720000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Denver%2C_Colorado_skyline_%28cropped%29.jpg/960px-Denver%2C_Colorado_skyline_%28cropped%29.jpg"
+  },
+  {
+    "id": "calgary-ca",
+    "name": "Calgary",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 51.0447,
+    "lon": -114.0719,
+    "population": 1340000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Downtown_Calgary_2020-4.jpg/960px-Downtown_Calgary_2020-4.jpg"
+  },
+  {
+    "id": "ottawa-ca",
+    "name": "Ottawa",
+    "country": "Canada",
+    "countryCode": "CA",
+    "lat": 45.4215,
+    "lon": -75.6972,
+    "population": 1010000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Parliament-Ottawa.jpg/960px-Parliament-Ottawa.jpg"
+  },
+  {
+    "id": "guadalajara-mx",
+    "name": "Guadalajara",
+    "country": "Mexico",
+    "countryCode": "MX",
+    "lat": 20.6597,
+    "lon": -103.3496,
+    "population": 1500000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Panor%C3%A1mica_Guadalajara_desde_edificio_Bansi_hacia_norte_%28cropped%29.jpg/960px-Panor%C3%A1mica_Guadalajara_desde_edificio_Bansi_hacia_norte_%28cropped%29.jpg"
+  },
+  {
+    "id": "panama-city-pa",
+    "name": "Panama City",
+    "country": "Panama",
+    "countryCode": "PA",
+    "lat": 8.9824,
+    "lon": -79.5199,
+    "population": 880000,
+    "continent": "North America",
+    "aliases": [
+      "Panamá"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Panama_Papers_%28148830809%29.jpeg/960px-Panama_Papers_%28148830809%29.jpeg"
+  },
+  {
+    "id": "medellin-co",
+    "name": "Medellín",
+    "country": "Colombia",
+    "countryCode": "CO",
+    "lat": 6.2442,
+    "lon": -75.5812,
+    "population": 2500000,
+    "continent": "South America",
+    "aliases": [
+      "Medellin"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/El_Poblado_Medell%C3%ADn.jpg/960px-El_Poblado_Medell%C3%ADn.jpg"
+  },
+  {
+    "id": "montevideo-uy",
+    "name": "Montevideo",
+    "country": "Uruguay",
+    "countryCode": "UY",
+    "lat": -34.9011,
+    "lon": -56.1645,
+    "population": 1320000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/PALACIO_LEGISLATIVO_01.JPG/960px-PALACIO_LEGISLATIVO_01.JPG"
+  },
+  {
+    "id": "la-paz-bo",
+    "name": "La Paz",
+    "country": "Bolivia",
+    "countryCode": "BO",
+    "lat": -16.4897,
+    "lon": -68.1193,
+    "population": 760000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Vista_del_centro_de_La_Paz.jpg/960px-Vista_del_centro_de_La_Paz.jpg"
+  },
+  {
+    "id": "salvador-br",
+    "name": "Salvador",
+    "country": "Brazil",
+    "countryCode": "BR",
+    "lat": -12.9777,
+    "lon": -38.5016,
+    "population": 2900000,
+    "continent": "South America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Salvador_BA_%28cropped%29_2.jpg/960px-Salvador_BA_%28cropped%29_2.jpg"
+  },
+  {
+    "id": "cusco-pe",
+    "name": "Cusco",
+    "country": "Peru",
+    "countryCode": "PE",
+    "lat": -13.532,
+    "lon": -71.9675,
+    "population": 430000,
+    "continent": "South America",
+    "aliases": [
+      "Cuzco"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Vista_Calle_Suecia.jpg/960px-Vista_Calle_Suecia.jpg"
+  },
+  {
+    "id": "chennai-in",
+    "name": "Chennai",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 13.0827,
+    "lon": 80.2707,
+    "population": 7000000,
+    "continent": "Asia",
+    "aliases": [
+      "Madras"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Chennai_Central.jpg"
+  },
+  {
+    "id": "kolkata-in",
+    "name": "Kolkata",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 22.5726,
+    "lon": 88.3639,
+    "population": 4500000,
+    "continent": "Asia",
+    "aliases": [
+      "Calcutta"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Kolkata_maidan.jpg/960px-Kolkata_maidan.jpg"
+  },
+  {
+    "id": "hyderabad-in",
+    "name": "Hyderabad",
+    "country": "India",
+    "countryCode": "IN",
+    "lat": 17.385,
+    "lon": 78.4867,
+    "population": 6900000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Downtown_hyderabad_drone.png/960px-Downtown_hyderabad_drone.png"
+  },
+  {
+    "id": "lahore-pk",
+    "name": "Lahore",
+    "country": "Pakistan",
+    "countryCode": "PK",
+    "lat": 31.5204,
+    "lon": 74.3587,
+    "population": 11000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Lahore_Fort_view_from_Baradari.jpg/960px-Lahore_Fort_view_from_Baradari.jpg"
+  },
+  {
+    "id": "dhaka-bd",
+    "name": "Dhaka",
+    "country": "Bangladesh",
+    "countryCode": "BD",
+    "lat": 23.8103,
+    "lon": 90.4125,
+    "population": 8900000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Drone_view_from_Kamal_Atat%C3%BCrk_Avenue.jpg/960px-Drone_view_from_Kamal_Atat%C3%BCrk_Avenue.jpg"
+  },
+  {
+    "id": "colombo-lk",
+    "name": "Colombo",
+    "country": "Sri Lanka",
+    "countryCode": "LK",
+    "lat": 6.9271,
+    "lon": 79.8612,
+    "population": 750000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Colombo_city_skyline_at_night.png/960px-Colombo_city_skyline_at_night.png"
+  },
+  {
+    "id": "kathmandu-np",
+    "name": "Kathmandu",
+    "country": "Nepal",
+    "countryCode": "NP",
+    "lat": 27.7172,
+    "lon": 85.324,
+    "population": 980000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kathmandu-Durbar_Square-06-Mahavishnu-Kuh-Vishnu-Pratapamalla-Jagannath-2007-gje.jpg/960px-Kathmandu-Durbar_Square-06-Mahavishnu-Kuh-Vishnu-Pratapamalla-Jagannath-2007-gje.jpg"
+  },
+  {
+    "id": "shenzhen-cn",
+    "name": "Shenzhen",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 22.5431,
+    "lon": 114.0579,
+    "population": 12500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Commercial_area_of_futian_to_east2020.jpg/960px-Commercial_area_of_futian_to_east2020.jpg"
+  },
+  {
+    "id": "guangzhou-cn",
+    "name": "Guangzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 23.1291,
+    "lon": 113.2644,
+    "population": 15000000,
+    "continent": "Asia",
+    "aliases": [
+      "Canton"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Canton_Tower_20241027.jpg/960px-Canton_Tower_20241027.jpg"
+  },
+  {
+    "id": "chengdu-cn",
+    "name": "Chengdu",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 30.5728,
+    "lon": 104.0668,
+    "population": 9000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%E9%9B%AA%E5%B1%B1%E4%B8%8B%E7%9A%84%E6%88%90%E9%83%BD%E5%B8%82%E5%A4%A9%E9%99%85%E7%BA%BF_Chengdu_skyline_with_snow_capped_mountains.jpg/960px-%E9%9B%AA%E5%B1%B1%E4%B8%8B%E7%9A%84%E6%88%90%E9%83%BD%E5%B8%82%E5%A4%A9%E9%99%85%E7%BA%BF_Chengdu_skyline_with_snow_capped_mountains.jpg"
+  },
+  {
+    "id": "busan-kr",
+    "name": "Busan",
+    "country": "South Korea",
+    "countryCode": "KR",
+    "lat": 35.1796,
+    "lon": 129.0756,
+    "population": 3400000,
+    "continent": "Asia",
+    "aliases": [
+      "Pusan"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Gwangandaegyo_Bridge_in_Busan%2C_South_Korea_%28iau2207b%29.tiff/lossy-page1-960px-Gwangandaegyo_Bridge_in_Busan%2C_South_Korea_%28iau2207b%29.tiff.jpg"
+  },
+  {
+    "id": "sapporo-jp",
+    "name": "Sapporo",
+    "country": "Japan",
+    "countryCode": "JP",
+    "lat": 43.0618,
+    "lon": 141.3545,
+    "population": 1970000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/SapporoCity_Skylines2020.jpg"
+  },
+  {
+    "id": "tashkent-uz",
+    "name": "Tashkent",
+    "country": "Uzbekistan",
+    "countryCode": "UZ",
+    "lat": 41.2995,
+    "lon": 69.2401,
+    "population": 2500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Nest_One_Tashkent.jpg/960px-Nest_One_Tashkent.jpg"
+  },
+  {
+    "id": "baku-az",
+    "name": "Baku",
+    "country": "Azerbaijan",
+    "countryCode": "AZ",
+    "lat": 40.4093,
+    "lon": 49.8671,
+    "population": 2300000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Baku_Montage.jpg/960px-Baku_Montage.jpg"
+  },
+  {
+    "id": "amman-jo",
+    "name": "Amman",
+    "country": "Jordan",
+    "countryCode": "JO",
+    "lat": 31.9539,
+    "lon": 35.9106,
+    "population": 4000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/New_Abdali_2024.png/960px-New_Abdali_2024.png"
+  },
+  {
+    "id": "beirut-lb",
+    "name": "Beirut",
+    "country": "Lebanon",
+    "countryCode": "LB",
+    "lat": 33.8938,
+    "lon": 35.5018,
+    "population": 360000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Beyrouth_vue_a%C3%A9rienne.jpg"
+  },
+  {
+    "id": "abuja-ng",
+    "name": "Abuja",
+    "country": "Nigeria",
+    "countryCode": "NG",
+    "lat": 9.0765,
+    "lon": 7.3986,
+    "population": 3000000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Abuja_heritages_30.jpg/960px-Abuja_heritages_30.jpg"
+  },
+  {
+    "id": "kinshasa-cd",
+    "name": "Kinshasa",
+    "country": "DR Congo",
+    "countryCode": "CD",
+    "lat": -4.4419,
+    "lon": 15.2663,
+    "population": 14500000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/La_Gombe%2C_Kinshasa%2C_RDC_%28cropped%29.jpg/960px-La_Gombe%2C_Kinshasa%2C_RDC_%28cropped%29.jpg"
+  },
+  {
+    "id": "luanda-ao",
+    "name": "Luanda",
+    "country": "Angola",
+    "countryCode": "AO",
+    "lat": -8.8383,
+    "lon": 13.2344,
+    "population": 8300000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Luanda_2025_focused_%28cropped%29.jpg/960px-Luanda_2025_focused_%28cropped%29.jpg"
+  },
+  {
+    "id": "dar-es-salaam-tz",
+    "name": "Dar es Salaam",
+    "country": "Tanzania",
+    "countryCode": "TZ",
+    "lat": -6.7924,
+    "lon": 39.2083,
+    "population": 6700000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/St_Joseph%27s_Catholic_Cathedral_%2834895613805%29.jpg/960px-St_Joseph%27s_Catholic_Cathedral_%2834895613805%29.jpg"
+  },
+  {
+    "id": "khartoum-sd",
+    "name": "Khartoum",
+    "country": "Sudan",
+    "countryCode": "SD",
+    "lat": 15.5007,
+    "lon": 32.5599,
+    "population": 5500000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/%C2%A9Nile-Project_-Sari_Omer_0025.jpg/960px-%C2%A9Nile-Project_-Sari_Omer_0025.jpg"
+  },
+  {
+    "id": "kampala-ug",
+    "name": "Kampala",
+    "country": "Uganda",
+    "countryCode": "UG",
+    "lat": 0.3476,
+    "lon": 32.5825,
+    "population": 1650000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Urban_Rising%2C_KAMPALA%2C_Uganda.jpg/960px-Urban_Rising%2C_KAMPALA%2C_Uganda.jpg"
+  },
+  {
+    "id": "abidjan-ci",
+    "name": "Abidjan",
+    "country": "Ivory Coast",
+    "countryCode": "CI",
+    "lat": 5.36,
+    "lon": -4.0083,
+    "population": 4700000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Visite_du_mus%C3%A9e_de_civilisation_de_C%C3%B4te_d%27Ivoire_08.jpg/960px-Visite_du_mus%C3%A9e_de_civilisation_de_C%C3%B4te_d%27Ivoire_08.jpg"
+  },
+  {
+    "id": "pretoria-za",
+    "name": "Pretoria",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lat": -25.7479,
+    "lon": 28.2293,
+    "population": 740000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Uniegebou.jpg"
+  },
+  {
+    "id": "durban-za",
+    "name": "Durban",
+    "country": "South Africa",
+    "countryCode": "ZA",
+    "lat": -29.8587,
+    "lon": 31.0218,
+    "population": 3900000,
+    "continent": "Africa",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Durban_from_the_Balcony_%28Dennis_Sylvester_Hurd%29_1.jpg/960px-Durban_from_the_Balcony_%28Dennis_Sylvester_Hurd%29_1.jpg"
+  },
+  {
+    "id": "adelaide-au",
+    "name": "Adelaide",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -34.9285,
+    "lon": 138.6007,
+    "population": 1340000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Adelaide_skyline%2C_December_2022_b.jpg/960px-Adelaide_skyline%2C_December_2022_b.jpg"
+  },
+  {
+    "id": "canberra-au",
+    "name": "Canberra",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -35.2809,
+    "lon": 149.13,
+    "population": 460000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Canberra_panorama_from_Mount_Ainslie.jpg/960px-Canberra_panorama_from_Mount_Ainslie.jpg"
+  },
+  {
+    "id": "christchurch-nz",
+    "name": "Christchurch",
+    "country": "New Zealand",
+    "countryCode": "NZ",
+    "lat": -43.5321,
+    "lon": 172.6362,
+    "population": 380000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/The_%22Brill%22_Tram_178.New_Regent_St_Christchurch._%2811510530335%29.jpg/960px-The_%22Brill%22_Tram_178.New_Regent_St_Christchurch._%2811510530335%29.jpg"
+  },
+  {
+    "id": "gold-coast-au",
+    "name": "Gold Coast",
+    "country": "Australia",
+    "countryCode": "AU",
+    "lat": -28.0167,
+    "lon": 153.4,
+    "population": 710000,
+    "continent": "Oceania",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Gold_Coast_skyline_%28Unsplash%29.jpg/960px-Gold_Coast_skyline_%28Unsplash%29.jpg"
+  },
+  {
+    "id": "jeddah-sa",
+    "name": "Jeddah",
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "lat": 21.5433,
+    "lon": 39.1728,
+    "population": 4800000,
+    "continent": "Asia",
+    "aliases": [
+      "Jiddah"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AC%D8%AF%D8%A9_%D8%BA%D8%B1%D8%A8_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%282025%29_%28cropped%29.jpg/960px-%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AC%D8%AF%D8%A9_%D8%BA%D8%B1%D8%A8_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%282025%29_%28cropped%29.jpg"
+  },
+  {
+    "id": "mecca-sa",
+    "name": "Mecca",
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "lat": 21.4225,
+    "lon": 39.8233,
+    "population": 2400000,
+    "continent": "Asia",
+    "aliases": [
+      "Makkah"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Great_Mosque_of_Mecca1.jpg/960px-Great_Mosque_of_Mecca1.jpg"
+  },
+  {
+    "id": "medina-sa",
+    "name": "Medina",
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "lat": 24.47,
+    "lon": 39.61,
+    "population": 1500000,
+    "continent": "Asia",
+    "aliases": [
+      "Madinah",
+      "Al Madinah"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Al-Masjid_An-Nabawi_%28Bird%27s_Eye_View%29.jpg/960px-Al-Masjid_An-Nabawi_%28Bird%27s_Eye_View%29.jpg"
+  },
+  {
+    "id": "yanbu-sa",
+    "name": "Yanbu",
+    "country": "Saudi Arabia",
+    "countryCode": "SA",
+    "lat": 24.0883,
+    "lon": 38.0582,
+    "population": 280000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Yanbu_Beach_1.jpg"
+  },
+  {
+    "id": "sharjah-ae",
+    "name": "Sharjah",
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "lat": 25.3575,
+    "lon": 55.3908,
+    "population": 800000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Al_Qasba.jpg/960px-Al_Qasba.jpg"
+  },
+  {
+    "id": "kuwait-city-kw",
+    "name": "Kuwait City",
+    "country": "Kuwait",
+    "countryCode": "KW",
+    "lat": 29.3697,
+    "lon": 47.9783,
+    "population": 1400000,
+    "continent": "Asia",
+    "aliases": [
+      "Kuwait"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Kuwait_City_Skyline_1.jpg/960px-Kuwait_City_Skyline_1.jpg"
+  },
+  {
+    "id": "manama-bh",
+    "name": "Manama",
+    "country": "Bahrain",
+    "countryCode": "BH",
+    "lat": 26.2233,
+    "lon": 50.5875,
+    "population": 700000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Manama%2C_Bahrain_Decembre_2014.jpg/960px-Manama%2C_Bahrain_Decembre_2014.jpg"
+  },
+  {
+    "id": "muscat-om",
+    "name": "Muscat",
+    "country": "Oman",
+    "countryCode": "OM",
+    "lat": 23.5889,
+    "lon": 58.4083,
+    "population": 1400000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Al_Alam_Palace.jpg/960px-Al_Alam_Palace.jpg"
+  },
+  {
+    "id": "salalah-om",
+    "name": "Salalah",
+    "country": "Oman",
+    "countryCode": "OM",
+    "lat": 17.0197,
+    "lon": 54.0897,
+    "population": 370000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dunst_Oman_scan0322_-_Burj_al_Nahda.jpg/960px-Dunst_Oman_scan0322_-_Burj_al_Nahda.jpg"
+  },
+  {
+    "id": "sanaa-ye",
+    "name": "Sanaa",
+    "country": "Yemen",
+    "countryCode": "YE",
+    "lat": 15.3483,
+    "lon": 44.2064,
+    "population": 2500000,
+    "continent": "Asia",
+    "aliases": [
+      "Sana'a"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sana%27a_%282286825748%29.jpg/960px-Sana%27a_%282286825748%29.jpg"
+  },
+  {
+    "id": "aden-ye",
+    "name": "Aden",
+    "country": "Yemen",
+    "countryCode": "YE",
+    "lat": 12.8,
+    "lon": 45.0333,
+    "population": 900000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/MallaDistrict.jpg/960px-MallaDistrict.jpg"
+  },
+  {
+    "id": "austin-us",
+    "name": "Austin",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 30.2672,
+    "lon": -97.7431,
+    "population": 980000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Skyline_of_Austin%2C_Texas_%28cropped%29.jpg/960px-Skyline_of_Austin%2C_Texas_%28cropped%29.jpg"
+  },
+  {
+    "id": "san-antonio-us",
+    "name": "San Antonio",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 29.425,
+    "lon": -98.4939,
+    "population": 1480000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/San_Antonio_Botanical_Garden_Overlook_View.jpg/960px-San_Antonio_Botanical_Garden_Overlook_View.jpg"
+  },
+  {
+    "id": "san-jose-us",
+    "name": "San Jose",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 37.3361,
+    "lon": -121.8906,
+    "population": 1000000,
+    "continent": "North America",
+    "aliases": [
+      "San José"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Valencia_Hotel%2C_Santana_Row_%28cropped%29.jpg/960px-Valencia_Hotel%2C_Santana_Row_%28cropped%29.jpg"
+  },
+  {
+    "id": "portland-us",
+    "name": "Portland",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 45.52,
+    "lon": -122.6819,
+    "population": 630000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Portland_Oregon_Aerial%2C_June_2025.jpg/960px-Portland_Oregon_Aerial%2C_June_2025.jpg"
+  },
+  {
+    "id": "new-orleans-us",
+    "name": "New Orleans",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 29.9761,
+    "lon": -90.0783,
+    "population": 370000,
+    "continent": "North America",
+    "aliases": [
+      "NOLA"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline_%28cropped%29.jpg/960px-New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline_%28cropped%29.jpg"
+  },
+  {
+    "id": "nashville-us",
+    "name": "Nashville",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 36.1622,
+    "lon": -86.7744,
+    "population": 690000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Nashville%2C_TN_skyline.jpg/960px-Nashville%2C_TN_skyline.jpg"
+  },
+  {
+    "id": "detroit-us",
+    "name": "Detroit",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 42.3317,
+    "lon": -83.0458,
+    "population": 630000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Detroit_Skyline_from_Windsor_2025-09-01.jpg/960px-Detroit_Skyline_from_Windsor_2025-09-01.jpg"
+  },
+  {
+    "id": "minneapolis-us",
+    "name": "Minneapolis",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 44.9819,
+    "lon": -93.2692,
+    "population": 430000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Minneapolis_Skyline_looking_south.jpg/960px-Minneapolis_Skyline_looking_south.jpg"
+  },
+  {
+    "id": "salt-lake-city-us",
+    "name": "Salt Lake City",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 40.7608,
+    "lon": -111.8911,
+    "population": 210000,
+    "continent": "North America",
+    "aliases": [
+      "SLC"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Salt_Lake_Union_Pacific_Railroad_Station%2C_South_Temple_at_400_West%2C_Central_City_West%2C_Salt_Lake_City%2C_UT%2C_USA.jpg/960px-Salt_Lake_Union_Pacific_Railroad_Station%2C_South_Temple_at_400_West%2C_Central_City_West%2C_Salt_Lake_City%2C_UT%2C_USA.jpg"
+  },
+  {
+    "id": "charlotte-us",
+    "name": "Charlotte",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 35.2272,
+    "lon": -80.8431,
+    "population": 900000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Uptown_Charlotte_2018_taking_by_DJI_Phantom_4_pro.jpg/960px-Uptown_Charlotte_2018_taking_by_DJI_Phantom_4_pro.jpg"
+  },
+  {
+    "id": "orlando-us",
+    "name": "Orlando",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 28.54,
+    "lon": -81.38,
+    "population": 310000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Orlando%2C_Florida_%28cropped%29.jpg/960px-Orlando%2C_Florida_%28cropped%29.jpg"
+  },
+  {
+    "id": "sacramento-us",
+    "name": "Sacramento",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 38.5817,
+    "lon": -121.4944,
+    "population": 525000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Sacramento%2C_CA_skyline_%28cropped%29.jpg/960px-Sacramento%2C_CA_skyline_%28cropped%29.jpg"
+  },
+  {
+    "id": "pittsburgh-us",
+    "name": "Pittsburgh",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 40.4397,
+    "lon": -79.9764,
+    "population": 300000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ascending_the_Duquesne_Incline.jpg/960px-Ascending_the_Duquesne_Incline.jpg"
+  },
+  {
+    "id": "memphis-us",
+    "name": "Memphis",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 35.1461,
+    "lon": -90.0519,
+    "population": 620000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Skyline_of_Memphis%2C_TN.jpg/960px-Skyline_of_Memphis%2C_TN.jpg"
+  },
+  {
+    "id": "anchorage-us",
+    "name": "Anchorage",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 61.2167,
+    "lon": -149.8936,
+    "population": 290000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Anchorage%2C_Alaska_skyline.jpg/960px-Anchorage%2C_Alaska_skyline.jpg"
+  },
+  {
+    "id": "st-louis-us",
+    "name": "St. Louis",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 38.627,
+    "lon": -90.1994,
+    "population": 300000,
+    "continent": "North America",
+    "aliases": [
+      "Saint Louis"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Runner_Fountain_and_Old_Courthouse_and_Arch_%285618845531%29.jpg/960px-Runner_Fountain_and_Old_Courthouse_and_Arch_%285618845531%29.jpg"
+  },
+  {
+    "id": "kansas-city-us",
+    "name": "Kansas City",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.0997,
+    "lon": -94.5786,
+    "population": 510000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Kansas_City_-_Downtown_-_panoramio_%2815%29.jpg/960px-Kansas_City_-_Downtown_-_panoramio_%2815%29.jpg"
+  },
+  {
+    "id": "cleveland-us",
+    "name": "Cleveland",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 41.4993,
+    "lon": -81.6944,
+    "population": 370000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Cleveland_skyline_from_Lakewood_Park%2C_January_2026.jpg/960px-Cleveland_skyline_from_Lakewood_Park%2C_January_2026.jpg"
+  },
+  {
+    "id": "cincinnati-us",
+    "name": "Cincinnati",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.1031,
+    "lon": -84.512,
+    "population": 310000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Downtown_Cincinnati_viewed_from_Devou_Park_%28cropped%29.jpg/960px-Downtown_Cincinnati_viewed_from_Devou_Park_%28cropped%29.jpg"
+  },
+  {
+    "id": "indianapolis-us",
+    "name": "Indianapolis",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.7684,
+    "lon": -86.1581,
+    "population": 880000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Indianapolis-1872529_1920_%28cropped%29.jpg/960px-Indianapolis-1872529_1920_%28cropped%29.jpg"
+  },
+  {
+    "id": "columbus-us",
+    "name": "Columbus",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.9612,
+    "lon": -82.9988,
+    "population": 910000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Downtown_Columbus_View_from_Main_St_Bridge_-_edit1.jpg/960px-Downtown_Columbus_View_from_Main_St_Bridge_-_edit1.jpg"
+  },
+  {
+    "id": "milwaukee-us",
+    "name": "Milwaukee",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 43.0389,
+    "lon": -87.9065,
+    "population": 570000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Milwaukee_Skyline_w_New_NW_Mutual_Building_2025_by_Isaac_Rowlett.jpg/960px-Milwaukee_Skyline_w_New_NW_Mutual_Building_2025_by_Isaac_Rowlett.jpg"
+  },
+  {
+    "id": "baltimore-us",
+    "name": "Baltimore",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 39.2904,
+    "lon": -76.6122,
+    "population": 570000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Fell%27s_Point_Aerial_2022.jpg/960px-Fell%27s_Point_Aerial_2022.jpg"
+  },
+  {
+    "id": "tampa-us",
+    "name": "Tampa",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 27.9506,
+    "lon": -82.4572,
+    "population": 400000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Downtown_Tampa%2C_Florida.jpg/960px-Downtown_Tampa%2C_Florida.jpg"
+  },
+  {
+    "id": "buffalo-us",
+    "name": "Buffalo",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 42.8864,
+    "lon": -78.8784,
+    "population": 275000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Buffalo%2C_NY_skyline.jpg/960px-Buffalo%2C_NY_skyline.jpg"
+  },
+  {
+    "id": "albuquerque-us",
+    "name": "Albuquerque",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 35.0844,
+    "lon": -106.6504,
+    "population": 560000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Albuquerque%2C_New_Mexico_skyline.jpg/960px-Albuquerque%2C_New_Mexico_skyline.jpg"
+  },
+  {
+    "id": "el-paso-us",
+    "name": "El Paso",
+    "country": "United States",
+    "countryCode": "US",
+    "lat": 31.7619,
+    "lon": -106.485,
+    "population": 680000,
+    "continent": "North America",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/El_Paso_Cityscape_%28cropped%29.jpg/960px-El_Paso_Cityscape_%28cropped%29.jpg"
+  },
+  {
+    "id": "chongqing-cn",
+    "name": "Chongqing",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 29.563,
+    "lon": 106.5516,
+    "population": 16000000,
+    "continent": "Asia",
+    "aliases": [
+      "Chungking"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Chongqing_Nightscape.jpg/960px-Chongqing_Nightscape.jpg"
+  },
+  {
+    "id": "wuhan-cn",
+    "name": "Wuhan",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 30.5928,
+    "lon": 114.3055,
+    "population": 11000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%E6%AD%A6%E6%B1%89%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%BF%AF%E7%9E%B0.jpg/960px-%E6%AD%A6%E6%B1%89%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%BF%AF%E7%9E%B0.jpg"
+  },
+  {
+    "id": "tianjin-cn",
+    "name": "Tianjin",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 39.1336,
+    "lon": 117.2054,
+    "population": 11000000,
+    "continent": "Asia",
+    "aliases": [
+      "Tientsin"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Tianjin_Eye_and_Tianjin.jpg/960px-Tianjin_Eye_and_Tianjin.jpg"
+  },
+  {
+    "id": "xian-cn",
+    "name": "Xi'an",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 34.3416,
+    "lon": 108.9398,
+    "population": 9000000,
+    "continent": "Asia",
+    "aliases": [
+      "Xian"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/City_wall_of_Xi%27an_51550-Xian_%2827959363326%29.jpg/960px-City_wall_of_Xi%27an_51550-Xian_%2827959363326%29.jpg"
+  },
+  {
+    "id": "hangzhou-cn",
+    "name": "Hangzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 30.2741,
+    "lon": 120.1551,
+    "population": 10000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/%E6%9D%AD%E5%B7%9E%E9%92%B1%E6%B1%9F%E6%96%B0%E5%9F%8E_4_%28cropped%29.jpg/960px-%E6%9D%AD%E5%B7%9E%E9%92%B1%E6%B1%9F%E6%96%B0%E5%9F%8E_4_%28cropped%29.jpg"
+  },
+  {
+    "id": "nanjing-cn",
+    "name": "Nanjing",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 32.0603,
+    "lon": 118.7969,
+    "population": 9000000,
+    "continent": "Asia",
+    "aliases": [
+      "Nanking"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Nanjing_CBD_from_City_Wall.jpg/960px-Nanjing_CBD_from_City_Wall.jpg"
+  },
+  {
+    "id": "suzhou-cn",
+    "name": "Suzhou",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 31.299,
+    "lon": 120.5853,
+    "population": 7500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg/960px-%E4%B8%9C%E6%96%B9%E4%B9%8B%E9%97%A81.jpg"
+  },
+  {
+    "id": "qingdao-cn",
+    "name": "Qingdao",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 36.0671,
+    "lon": 120.3826,
+    "population": 5000000,
+    "continent": "Asia",
+    "aliases": [
+      "Tsingtao"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Qingdao_Harbour_51341-Qingdao_%2849055637186%29.jpg/960px-Qingdao_Harbour_51341-Qingdao_%2849055637186%29.jpg"
+  },
+  {
+    "id": "shenyang-cn",
+    "name": "Shenyang",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 41.8057,
+    "lon": 123.4315,
+    "population": 7000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/%E6%B2%88%E9%98%B3%E9%9D%92%E5%B9%B4%E5%85%AC%E5%9B%AD.jpg/960px-%E6%B2%88%E9%98%B3%E9%9D%92%E5%B9%B4%E5%85%AC%E5%9B%AD.jpg"
+  },
+  {
+    "id": "harbin-cn",
+    "name": "Harbin",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 45.8038,
+    "lon": 126.535,
+    "population": 6000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/26935-Harbin_%2829661238117%29.jpg/960px-26935-Harbin_%2829661238117%29.jpg"
+  },
+  {
+    "id": "dalian-cn",
+    "name": "Dalian",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 38.914,
+    "lon": 121.6147,
+    "population": 4500000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Xigang%2C_Dalian%2C_Liaoning%2C_China_-_panoramio_%2818%29.jpg/960px-Xigang%2C_Dalian%2C_Liaoning%2C_China_-_panoramio_%2818%29.jpg"
+  },
+  {
+    "id": "kunming-cn",
+    "name": "Kunming",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 25.0389,
+    "lon": 102.7183,
+    "population": 5000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/%E4%BA%94%E5%8D%8E%E5%8C%BA%E4%B8%8E%E7%9B%98%E9%BE%99%E5%8C%BA%E5%A4%A9%E9%99%85%E7%BA%BF_-_%E8%88%AA%E6%8B%8D_-_2025-05-16_03.jpg/960px-%E4%BA%94%E5%8D%8E%E5%8C%BA%E4%B8%8E%E7%9B%98%E9%BE%99%E5%8C%BA%E5%A4%A9%E9%99%85%E7%BA%BF_-_%E8%88%AA%E6%8B%8D_-_2025-05-16_03.jpg"
+  },
+  {
+    "id": "jinan-cn",
+    "name": "Jinan",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 36.6512,
+    "lon": 117.1201,
+    "population": 5500000,
+    "continent": "Asia",
+    "aliases": [
+      "Tsinan"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Skyline_of_CBD%2C_Jinan%2C_China.jpg/960px-Skyline_of_CBD%2C_Jinan%2C_China.jpg"
+  },
+  {
+    "id": "urumqi-cn",
+    "name": "Ürümqi",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 43.8256,
+    "lon": 87.6168,
+    "population": 3500000,
+    "continent": "Asia",
+    "aliases": [
+      "Urumqi",
+      "Wulumuqi"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Urumqi_Skyline_July_2019.jpg/960px-Urumqi_Skyline_July_2019.jpg"
+  },
+  {
+    "id": "ningbo-cn",
+    "name": "Ningbo",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 29.8683,
+    "lon": 121.544,
+    "population": 4500000,
+    "continent": "Asia",
+    "aliases": [
+      "Ningpo"
+    ],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ningbo_City_God_Temple%2C_2021-10-23_06.jpg/960px-Ningbo_City_God_Temple%2C_2021-10-23_06.jpg"
+  },
+  {
+    "id": "shangqiu-cn",
+    "name": "Shangqiu",
+    "country": "China",
+    "countryCode": "CN",
+    "lat": 34.4147,
+    "lon": 115.656,
+    "population": 2000000,
+    "continent": "Asia",
+    "aliases": [],
+    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/20220726_Historic_City_of_Shangqiu_01.jpg/960px-20220726_Historic_City_of_Shangqiu_01.jpg"
+  }
+]

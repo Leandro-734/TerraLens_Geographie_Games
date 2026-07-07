@@ -1,0 +1,1293 @@
+:root {
+  --bg: #04070d;
+  --bg-raise: #0b1322;
+  --glass: rgba(9, 15, 27, 0.74);
+  --glass-strong: rgba(7, 12, 22, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --text: #eaf1fa;
+  --muted: #93a5bf;
+  --accent: #3fa9ff;
+  --accent-2: #7c6bff;
+  --accent-press: #2b8fe0;
+  --accent-ink: #04203b;
+  --good: #2bd98a;
+  --good-bg: rgba(43, 217, 138, 0.16);
+  --bad: #ff6b6b;
+  --bad-bg: rgba(255, 107, 107, 0.16);
+  --warn: #ffb84d;
+  --radius: 22px;
+  --radius-sm: 12px;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 10px 34px rgba(0, 0, 0, 0.45);
+  --blur: blur(18px) saturate(150%);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    radial-gradient(900px 600px at 85% -10%, rgba(63, 169, 255, 0.14), transparent 60%),
+    radial-gradient(800px 600px at -10% 110%, rgba(124, 107, 255, 0.12), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  height: 100%;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Card-centered screens (intros, summaries, menu)
+   ============================================================ */
+.screen {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  padding: 30px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.titleAccent {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------- form fields ---------- */
+.field {
+  margin-bottom: 18px;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.fieldRow .fieldLabel {
+  margin-bottom: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.fieldHint {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.segmented {
+  display: flex;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 5px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+}
+
+.segment {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s;
+}
+
+.segment:hover {
+  color: var(--text);
+}
+
+.segmentActive {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+}
+
+.select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text);
+}
+
+.toggle {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-weight: 700;
+  transition: transform 0.05s, background 0.15s, border-color 0.15s, box-shadow 0.2s;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(63, 169, 255, 0.35);
+}
+
+.btnPrimary:hover {
+  box-shadow: 0 8px 30px rgba(63, 169, 255, 0.5);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.5;
+  box-shadow: none;
+  cursor: default;
+}
+
+.btnGhost {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btnGhost:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.btnBig {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.05rem;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  text-decoration: underline;
+  padding: 6px;
+  font-size: 0.9rem;
+}
+
+.linkBtn:hover {
+  color: var(--text);
+}
+
+/* ---------- stats / how-to / footer ---------- */
+.statsRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.stat {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.howto {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.howto summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.howto ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.footer {
+  margin: 18px 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  padding: 0 0 14px;
+  font-weight: 600;
+}
+
+.backBtn:hover {
+  color: var(--text);
+}
+
+/* ============================================================
+   In-game: full-bleed map with floating glass overlays.
+   The map layer owns the whole viewport; every control floats
+   above it so nothing steals vertical space from the imagery.
+   ============================================================ */
+.round {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* The map fills everything. */
+.mapWrap,
+.travleMapWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.satMap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0f18;
+}
+
+.travleMap {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+}
+
+.revealMap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0f18;
+}
+
+/* ---------- floating HUD (top row) ---------- */
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.hud > * {
+  pointer-events: auto;
+}
+
+.iconBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1;
+  box-shadow: var(--shadow-soft);
+}
+
+.iconBtn:hover {
+  border-color: var(--border-strong);
+}
+
+.hudRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* One combined pill (round/guesses left · score) anchored top-right. */
+.statPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow-soft);
+  font-size: 0.92rem;
+}
+
+.statPillRound {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.statPillStreak {
+  font-weight: 700;
+  color: var(--warn);
+}
+
+.statPillScore {
+  padding-left: 9px;
+  border-left: 1px solid var(--glass-border);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- floating prompt pill (below the HUD) ---------- */
+.overlayPrompt {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  /* Reserve room on both sides so the centered prompt sits on the HUD row
+     without ever colliding with the close button or the info pill. */
+  max-width: min(620px, calc(100% - 340px));
+  pointer-events: none;
+}
+
+.overlayPrompt > * {
+  pointer-events: auto;
+}
+
+/* ---------- timer ---------- */
+.timerOverlay {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 7px 14px 7px 12px;
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow-soft);
+}
+
+.timerTrack {
+  width: 140px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.timerFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  transition: width 1s linear, background 0.3s;
+}
+
+.timerLow {
+  background: var(--bad);
+}
+
+.timerSecs {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 0.9rem;
+  min-width: 28px;
+  text-align: right;
+}
+
+/* ---------- floating guess panel (bottom) ---------- */
+.guessPanel {
+  position: absolute;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(620px, calc(100% - 20px));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+    var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  padding: 14px;
+  z-index: 30;
+}
+
+.guessPrompt {
+  margin: 0 0 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.choiceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.05);
+  text-align: left;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s, transform 0.05s;
+}
+
+.choice:hover {
+  background: rgba(63, 169, 255, 0.16);
+  border-color: var(--accent);
+}
+
+.choice:active {
+  transform: translateY(1px);
+}
+
+.choiceName {
+  flex: 1;
+}
+
+/* ---------- autocomplete ---------- */
+.autocomplete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputRow {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.cityInput {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-strong);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text);
+}
+
+.cityInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.suggestions {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  max-height: 260px;
+  overflow-y: auto;
+  z-index: 5;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  text-align: left;
+}
+
+.suggestionActive {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+}
+
+.suggestionName {
+  font-weight: 600;
+}
+
+.suggestionCountry {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.suggestionActive .suggestionCountry {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- result screen (full-bleed reveal) ---------- */
+.revealPanel {
+  position: absolute;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(540px, calc(100% - 20px));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+    var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  padding: 16px 18px 18px;
+  z-index: 30;
+}
+
+/* A calm colored hairline along the top edge signals the verdict at a glance
+   (inset shadow so it follows the panel's rounded corners cleanly). */
+.revealPanel.revealGood {
+  box-shadow: var(--shadow), inset 0 2px 0 color-mix(in srgb, var(--good) 75%, transparent);
+}
+
+.revealPanel.revealBad {
+  box-shadow: var(--shadow), inset 0 2px 0 color-mix(in srgb, var(--bad) 70%, transparent);
+}
+
+.revealHead {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 12px;
+}
+
+.revealFlag {
+  flex: none;
+  border-radius: 6px;
+}
+
+.revealHeadText {
+  flex: 1;
+  min-width: 0;
+}
+
+.revealName {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.revealCountry {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.revealBadge {
+  flex: none;
+  padding: 9px 15px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 1.02rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.revealBadge.good {
+  background: var(--good-bg);
+  color: var(--good);
+}
+
+.revealBadge.muted {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+}
+
+.revealVerdict {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.revealVerdict strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ---------- summary bits ---------- */
+.newBest {
+  text-align: center;
+  background: var(--good-bg);
+  color: var(--good);
+  font-weight: 700;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.finalScore {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.finalScoreUnit {
+  font-size: 1.1rem;
+  font-weight: 700;
+  -webkit-text-fill-color: var(--muted);
+}
+
+.summary .tagline {
+  text-align: center;
+}
+
+.recap {
+  list-style: none;
+  margin: 18px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.recapItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+}
+
+.recapName {
+  font-weight: 600;
+}
+
+.recapBadge {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.recapBadge.good {
+  color: var(--good);
+}
+
+.recapBadge.bad {
+  color: var(--bad);
+}
+
+.summaryButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ============================================================
+   Main menu
+   ============================================================ */
+.menuInner {
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+  padding: 16px 0;
+}
+
+.menuHeader {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.menuLogo {
+  width: 76px;
+  height: 76px;
+  display: block;
+  margin: 0 auto 10px;
+  filter: drop-shadow(0 0 24px rgba(63, 169, 255, 0.45));
+}
+
+.menuHeader .title {
+  font-size: clamp(2.3rem, 5vw, 3.2rem);
+}
+
+.menuHeader .tagline {
+  margin-bottom: 0;
+}
+
+.gameGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.gameCard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  padding: 26px;
+  min-height: 250px;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012)),
+    var(--glass);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  color: var(--text);
+  transition: transform 0.12s ease, border-color 0.15s, box-shadow 0.2s;
+}
+
+.gameCard::before {
+  content: '';
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--card-accent, var(--accent)) 0%, transparent 70%);
+  opacity: 0.22;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.gameCard:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 55%, transparent);
+}
+
+.gameCard:hover::before {
+  opacity: 0.4;
+}
+
+.gameIcon {
+  width: 62px;
+  height: 62px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.gameTitle {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.gameTagline {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.gameFooter {
+  margin-top: auto;
+  padding-top: 14px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.gameBest {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.gameBest strong {
+  color: var(--card-accent, var(--accent));
+}
+
+.gamePlay {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--card-accent, var(--accent));
+}
+
+/* ============================================================
+   Pin the City
+   ============================================================ */
+.locatePrompt {
+  margin: 0;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.02rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow-soft);
+}
+
+.locatePrompt strong {
+  color: var(--accent);
+}
+
+.locateResult {
+  text-align: center;
+  margin: 0 0 10px;
+  font-size: 1.02rem;
+}
+
+.pointsInline {
+  color: var(--good);
+  font-weight: 800;
+}
+
+/* ============================================================
+   Country Trail
+   ============================================================ */
+.travleTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.travleRoute {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.travleNode {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--glass);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow-soft);
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.travleNode.linked {
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+
+.travleArrow {
+  color: var(--muted);
+  font-size: 1.2rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.travlePar {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: var(--blur);
+  text-align: center;
+}
+
+.travleStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+.travleStatus:empty {
+  display: none;
+  margin: 0;
+}
+
+.travleChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.tChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tChipGood {
+  border-color: var(--good);
+  background: var(--good-bg);
+  color: #d6ffe9;
+}
+
+.tChipWarn {
+  border-color: var(--warn);
+  background: rgba(255, 184, 77, 0.14);
+  color: #ffe2b0;
+}
+
+.tChipDim {
+  opacity: 0.6;
+}
+
+.travleMsg {
+  margin: 0;
+  color: var(--muted);
+  min-height: 1.2em;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+/* Solved / failed result header: verdict + points badge on one calm row. */
+.travleResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.travleVerdict {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.travleVerdict.good {
+  color: var(--good);
+}
+
+.travleVerdict.bad {
+  color: var(--bad);
+}
+
+.travleResultBadge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.travleResultBadge.good {
+  background: var(--good-bg);
+  color: var(--good);
+}
+
+.travleResultBadge.muted {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+}
+
+.travleSubtle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.travleToggle {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-strong);
+}
+
+.travleToggleBtn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.travleToggleBtn:hover:not(.active) {
+  color: var(--text);
+}
+
+.travleToggleBtn.active {
+  background: var(--good-bg);
+  color: var(--good);
+}
+
+.travlePath {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pathStep {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pathArrow {
+  color: var(--muted);
+}
+
+.hintRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.hintLabel {
+  color: var(--muted);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 2px;
+}
+
+.hintBtn {
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.hintBtn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.hintBtn:disabled {
+  cursor: default;
+}
+
+.hintOn {
+  opacity: 0.6;
+  border-color: var(--good);
+}
+
+.hintLocked {
+  opacity: 0.35;
+  border-style: dashed;
+}
+
+.travleGiveUp {
+  display: block;
+  margin: 6px auto 0;
+  padding: 2px 6px;
+}
+
+/* ============================================================
+   MapLibre controls — restyled to match the floating glass UI
+   and pushed below the HUD pills so nothing overlaps.
+   ============================================================ */
+.maplibregl-ctrl-top-right {
+  top: 56px;
+}
+
+/* Match the info pill's right gap (the HUD's 14px right padding) instead of
+   MapLibre's default 10px, so the zoom control lines up under it. */
+.maplibregl-ctrl-top-right .maplibregl-ctrl {
+  margin-right: 14px;
+}
+
+.maplibregl-ctrl-group {
+  background: var(--glass) !important;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px !important;
+  backdrop-filter: var(--blur);
+  box-shadow: var(--shadow-soft) !important;
+  overflow: hidden;
+}
+
+.maplibregl-ctrl-group button {
+  background: transparent !important;
+  width: 34px;
+  height: 34px;
+}
+
+.maplibregl-ctrl-group button + button {
+  border-top: 1px solid var(--glass-border) !important;
+}
+
+.maplibregl-ctrl button .maplibregl-ctrl-icon {
+  filter: invert(1) brightness(1.6);
+}
+
+/* ============================================================
+   Small screens
+   ============================================================ */
+@media (max-width: 520px) {
+  .card {
+    padding: 22px;
+  }
+  .title {
+    font-size: 1.7rem;
+  }
+  .hud {
+    padding: 10px;
+  }
+  .statPill {
+    padding: 7px 12px;
+    font-size: 0.84rem;
+  }
+  .overlayPrompt {
+    top: 58px;
+    max-width: min(680px, calc(100% - 20px));
+  }
+  .timerOverlay {
+    top: 58px;
+  }
+  .guessPanel,
+  .revealPanel {
+    width: calc(100% - 12px);
+    padding: 12px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+  }
+  .choice {
+    padding: 11px 12px;
+    font-size: 0.92rem;
+  }
+  .gameCard {
+    min-height: 0;
+  }
+  .travleNode {
+    font-size: 0.88rem;
+    padding: 7px 11px;
+  }
+  .travleStatus {
+    max-height: 24vh;
+  }
+}

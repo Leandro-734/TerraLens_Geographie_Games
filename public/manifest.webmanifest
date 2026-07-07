@@ -1,0 +1,19 @@
+{
+  "name": "City from Satellite",
+  "short_name": "CitySat",
+  "description": "Guess the city from a satellite image — a geography guessing game.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
