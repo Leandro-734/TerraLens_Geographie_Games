@@ -1,3 +1,5 @@
+import { CloseIcon, SpeakerIcon } from './icons'
+
 export default function ScoreBar({
   round,
   total,
@@ -18,7 +20,7 @@ export default function ScoreBar({
   return (
     <div className="hud">
       <button className="iconBtn" onClick={onQuit} aria-label="Quit game" title="Quit game">
-        ✕
+        <CloseIcon />
       </button>
       <div className="hudRight">
         {onToggleMute && (
@@ -28,7 +30,7 @@ export default function ScoreBar({
             aria-label={muted ? 'Unmute' : 'Mute'}
             title={muted ? 'Unmute' : 'Mute'}
           >
-            {muted ? '🔇' : '🔊'}
+            <SpeakerIcon muted={!!muted} />
           </button>
         )}
         <div className="statPill">

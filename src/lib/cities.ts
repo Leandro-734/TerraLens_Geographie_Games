@@ -47,6 +47,39 @@ const SUB_REGION_FILTERS: Record<SubRegion, (city: City) => boolean> = {
 
 export const SUB_REGIONS = Object.keys(SUB_REGION_FILTERS) as SubRegion[]
 
+/** Which slice of the dataset a game draws from: a curated set of globally
+ * iconic cities, or the full list. */
+export type CityPool = 'famous' | 'all'
+
+/** Hand-picked, widely-recognised cities — a gentler pool for players who want
+ * the classics rather than all {@link CITIES}. Spans every continent. */
+export const FAMOUS_CITY_IDS = new Set<string>([
+  // Europe
+  'paris-fr', 'london-gb', 'madrid-es', 'barcelona-es', 'rome-it', 'venice-it',
+  'berlin-de', 'amsterdam-nl', 'vienna-at', 'prague-cz', 'athens-gr', 'lisbon-pt',
+  'moscow-ru', 'istanbul-tr', 'dublin-ie', 'stockholm-se',
+  // North America
+  'new-york-us', 'los-angeles-us', 'chicago-us', 'san-francisco-us', 'las-vegas-us',
+  'washington-us', 'miami-us', 'toronto-ca', 'vancouver-ca', 'mexico-city-mx',
+  // South America
+  'sao-paulo-br', 'rio-de-janeiro-br', 'buenos-aires-ar', 'lima-pe', 'bogota-co',
+  // Asia
+  'tokyo-jp', 'kyoto-jp', 'seoul-kr', 'beijing-cn', 'shanghai-cn', 'hong-kong-hk',
+  'bangkok-th', 'singapore-sg', 'mumbai-in', 'delhi-in', 'dubai-ae', 'jerusalem-il',
+  // Africa
+  'cairo-eg', 'cape-town-za', 'marrakech-ma', 'nairobi-ke',
+  // Oceania
+  'sydney-au', 'melbourne-au', 'auckland-nz',
+])
+
+/** Number of curated cities actually present in the dataset (for UI labels). */
+export const FAMOUS_CITY_COUNT = CITIES.filter((c) => FAMOUS_CITY_IDS.has(c.id)).length
+
+/** Narrow a list of cities to the chosen pool. 'all' returns them unchanged. */
+export function citiesInPool(cities: City[], pool: CityPool = 'all'): City[] {
+  return pool === 'famous' ? cities.filter((c) => FAMOUS_CITY_IDS.has(c.id)) : cities
+}
+
 /** All cities matching a region filter; 'all' (or omitted) returns every city. */
 export function citiesInRegion(region?: Region | 'all'): City[] {
   if (!region || region === 'all') return CITIES
@@ -110,8 +143,13 @@ export function orderByFreshness<T>(
  * list of recently-seen city ids (oldest first) that are pushed to the back so
  * the player is less likely to see the same city again soon.
  */
-export function pickRounds(n: number, region?: Region | 'all', recent: readonly string[] = []): City[] {
-  const pool = citiesInRegion(region)
+export function pickRounds(
+  n: number,
+  region?: Region | 'all',
+  recent: readonly string[] = [],
+  cityPool: CityPool = 'all',
+): City[] {
+  const pool = citiesInPool(citiesInRegion(region), cityPool)
   return orderByFreshness(pool, (c) => c.id, recent).slice(0, Math.min(n, pool.length))
 }
 

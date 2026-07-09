@@ -3,6 +3,7 @@ import { useAppStore } from '../../store/appStore'
 import { useGameNav } from '../../lib/nav'
 import { recentKeys, useHistoryStore } from '../../store/historyStore'
 import Flag from '../../components/Flag'
+import { CloseIcon } from '../../components/icons'
 import { useStickyFocus } from '../../lib/useStickyFocus'
 import { travleTrailScore } from '../../lib/scoring'
 import type { Puzzle } from '../../lib/countries'
@@ -278,7 +279,7 @@ export default function TravleGame() {
 
       <div className="hud">
         <button className="iconBtn" onClick={quit} aria-label="Quit game" title="Quit game">
-          ✕
+          <CloseIcon />
         </button>
         <div className="hudRight">
           <div className="statPill">

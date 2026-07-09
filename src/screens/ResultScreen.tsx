@@ -22,7 +22,7 @@ export default function ResultScreen() {
     <div className="round">
       <div className="mapWrap">
         <Suspense fallback={<div className="revealMap" />}>
-          <RevealMap city={city} />
+          <RevealMap city={city} correct={correct} />
         </Suspense>
       </div>
 

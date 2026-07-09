@@ -19,11 +19,14 @@ export default function LocateMap({
   guess,
   city,
   reveal = false,
+  good = false,
 }: {
   onPick?: (g: Guess) => void
   guess?: Guess | null
   city?: City
   reveal?: boolean
+  /** reveal mode: was the guess close enough? Colors the answer marker. */
+  good?: boolean
 }) {
   const ref = useRef<HTMLDivElement | null>(null)
   const onPickRef = useRef(onPick)
@@ -48,7 +51,7 @@ export default function LocateMap({
 
     if (!reveal) {
       map.on('click', (e) => {
-        if (!marker) marker = new maplibregl.Marker({ color: '#3fa9ff' }).setLngLat(e.lngLat).addTo(map)
+        if (!marker) marker = new maplibregl.Marker({ color: '#111111' }).setLngLat(e.lngLat).addTo(map)
         else marker.setLngLat(e.lngLat)
         onPickRef.current?.({ lng: e.lngLat.lng, lat: e.lngLat.lat })
       })
@@ -57,8 +60,10 @@ export default function LocateMap({
       const a: [number, number] = [city.lon, city.lat]
       // Markers and camera don't need the style — add them immediately so the
       // reveal is correct even before tiles finish loading.
-      new maplibregl.Marker({ color: '#3fa9ff' }).setLngLat(g).addTo(map)
-      new maplibregl.Marker({ color: '#ff5a5f' }).setLngLat(a).addTo(map)
+      // Player pin is neutral black; the answer marker carries the verdict
+      // color (green = close enough, red = too far).
+      new maplibregl.Marker({ color: '#111111' }).setLngLat(g).addTo(map)
+      new maplibregl.Marker({ color: good ? '#2bd98a' : '#ff5a5f' }).setLngLat(a).addTo(map)
       const bounds = new maplibregl.LngLatBounds(g, g)
       bounds.extend(a)
       map.fitBounds(bounds, { padding: 70, duration: 0, maxZoom: 6 })

@@ -8,7 +8,7 @@ import { esriRasterStyle } from '../lib/esri'
  * imagery zoomed out, with a marker on the answer so the player sees where the
  * city actually is.
  */
-export default function RevealMap({ city }: { city: City }) {
+export default function RevealMap({ city, correct = false }: { city: City; correct?: boolean }) {
   const ref = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -24,7 +24,8 @@ export default function RevealMap({ city }: { city: City }) {
       attributionControl: false,
     })
 
-    const marker = new maplibregl.Marker({ color: '#ff5a5f' })
+    // Marker doubles as the verdict signal: green when the guess was right.
+    const marker = new maplibregl.Marker({ color: correct ? '#2bd98a' : '#ff5a5f' })
       .setLngLat([city.lon, city.lat])
       .addTo(map)
 
@@ -36,7 +37,7 @@ export default function RevealMap({ city }: { city: City }) {
       marker.remove()
       map.remove()
     }
-  }, [city.id, city.lat, city.lon])
+  }, [city.id, city.lat, city.lon, correct])
 
   return <div className="revealMap" ref={ref} />
 }

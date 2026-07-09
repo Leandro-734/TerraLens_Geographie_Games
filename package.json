@@ -13,6 +13,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
     "fuse.js": "^7.4.2",
     "maplibre-gl": "^5.24.0",
     "react": "^19.2.7",

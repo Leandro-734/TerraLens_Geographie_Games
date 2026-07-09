@@ -157,7 +157,11 @@ export default function TravleMap(props: Props) {
         lastFitRef.current = fitKey
         map.fitBounds([[w, s], [e, n]] as maplibregl.LngLatBoundsLike, {
           padding: 55,
-          maxZoom: 5,
+          // Cap how tight the *initial* auto-focus is allowed to zoom in,
+          // even for adjacent/close country pairs — keeps every trail's
+          // opening view at a consistent, comfortably zoomed-out globe.
+          // Players can still zoom in/out freely afterward (maxZoom above).
+          maxZoom: 3.5,
           duration: animate ? 700 : 0,
         })
       }

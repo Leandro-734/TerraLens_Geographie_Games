@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react'
 import { useGameStore } from '../store/gameStore'
 import { useGameNav } from '../lib/nav'
-import { citiesInRegion } from '../lib/cities'
+import { citiesInPool, citiesInRegion } from '../lib/cities'
 import { ROUND_SECONDS, computeScore } from '../lib/scoring'
 import { playTick, playTimeUp } from '../lib/sound'
 import GuessInput from '../components/GuessInput'
@@ -24,8 +24,11 @@ export default function RoundScreen() {
   const city = cities[index]
   const [secondsLeft, setSecondsLeft] = useState(ROUND_SECONDS)
   const answeredRef = useRef(false)
-  // Keep multiple-choice distractors on-theme with the chosen region.
-  const pool = useMemo(() => citiesInRegion(settings.region), [settings.region])
+  // Keep multiple-choice distractors on-theme with the chosen region and pool.
+  const pool = useMemo(
+    () => citiesInPool(citiesInRegion(settings.region), settings.cityPool),
+    [settings.region, settings.cityPool],
+  )
 
   // Reset state at the start of each round.
   useEffect(() => {

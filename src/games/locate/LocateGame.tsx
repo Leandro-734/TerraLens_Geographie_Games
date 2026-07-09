@@ -2,12 +2,13 @@ import { Suspense, lazy, useCallback, useReducer, useState } from 'react'
 import { useAppStore } from '../../store/appStore'
 import { useGameNav } from '../../lib/nav'
 import { useAdvanceKey } from '../../lib/useAdvanceKey'
-import type { City } from '../../lib/cities'
-import { pickRounds } from '../../lib/cities'
+import type { City, CityPool } from '../../lib/cities'
+import { FAMOUS_CITY_COUNT, CITIES, pickRounds } from '../../lib/cities'
 import { recentKeys, useHistoryStore } from '../../store/historyStore'
 import { haversineKm } from '../../lib/geo'
 import { LOCATE_MAX_POINTS, scoreByDistanceKm } from '../../lib/scoring'
 import Flag from '../../components/Flag'
+import { CloseIcon } from '../../components/icons'
 import type { Guess } from './LocateMap'
 
 const LocateMap = lazy(() => import('./LocateMap'))
@@ -58,6 +59,7 @@ export default function LocateGame() {
   const best = useAppStore((s) => s.stats.locate.bestScore)
 
   const [rounds, setRounds] = useState(5)
+  const [cityPool, setCityPool] = useState<CityPool>('all')
   const [newBest, setNewBest] = useState(false)
   const [state, dispatch] = useReducer(reducer, initial)
 
@@ -67,10 +69,10 @@ export default function LocateGame() {
 
   // Pick a fresh set of cities, avoiding recently-seen ones, and record them.
   const startRun = useCallback(() => {
-    const cities = pickRounds(rounds, 'all', recentKeys('locate'))
+    const cities = pickRounds(rounds, 'all', recentKeys('locate'), cityPool)
     useHistoryStore.getState().remember('locate', cities.map((c) => c.id))
     dispatch({ type: 'start', cities })
-  }, [rounds])
+  }, [rounds, cityPool])
 
   const submitGuess = useCallback(() => {
     if (!state.guess || !city) return
@@ -129,6 +131,26 @@ export default function LocateGame() {
                 </button>
               ))}
             </div>
+          </div>
+
+          <div className="field">
+            <span className="fieldLabel">Cities</span>
+            <div className="segmented">
+              {(['famous', 'all'] as CityPool[]).map((p) => (
+                <button
+                  key={p}
+                  className={`segment${cityPool === p ? ' segmentActive' : ''}`}
+                  onClick={() => setCityPool(p)}
+                >
+                  {p === 'famous' ? `Famous (${FAMOUS_CITY_COUNT})` : `All (${CITIES.length})`}
+                </button>
+              ))}
+            </div>
+            <p className="fieldHint">
+              {cityPool === 'famous'
+                ? 'Only the most iconic, widely-known cities.'
+                : 'Every city in the dataset, including tougher ones.'}
+            </p>
           </div>
 
           <button
@@ -206,14 +228,20 @@ export default function LocateGame() {
           {state.phase === 'playing' ? (
             <LocateMap key={`guess-${state.index}`} onPick={(g) => dispatch({ type: 'pick', guess: g })} />
           ) : (
-            <LocateMap key={`reveal-${state.index}`} guess={state.guess} city={city} reveal />
+            <LocateMap
+              key={`reveal-${state.index}`}
+              guess={state.guess}
+              city={city}
+              reveal
+              good={(lastOutcome?.distanceKm ?? Infinity) <= 200}
+            />
           )}
         </Suspense>
       </div>
 
       <div className="hud">
         <button className="iconBtn" onClick={exitToMenu} aria-label="Quit game" title="Quit game">
-          ✕
+          <CloseIcon />
         </button>
         <div className="hudRight">
           <div className="statPill">
@@ -228,10 +256,8 @@ export default function LocateGame() {
       <div className="overlayPrompt">
         <p className="locatePrompt">
           {state.phase === 'playing' ? 'Where is ' : 'It was '}
-          <strong>
-            <Flag code={city.countryCode} size={20} /> {city.name}
-          </strong>
-          , {city.country}
+          <Flag code={city.countryCode} size={20} className="locatePromptFlag" />{' '}
+          <strong>{city.name}</strong>, {city.country}
           {state.phase === 'playing' ? '?' : ''}
         </p>
       </div>

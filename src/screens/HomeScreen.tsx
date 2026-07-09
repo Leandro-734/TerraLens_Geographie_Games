@@ -1,19 +1,13 @@
 import { useGameStore } from '../store/gameStore'
 import { useAppStore } from '../store/appStore'
 import { useGameNav } from '../lib/nav'
-import { CITIES, CONTINENTS, SUB_REGIONS } from '../lib/cities'
-import type { Region, SubRegion } from '../lib/cities'
-import { DIFFICULTY_LABELS } from '../lib/scoring'
+import { CITIES, FAMOUS_CITY_COUNT } from '../lib/cities'
+import type { CityPool, Region } from '../lib/cities'
 import type { Difficulty } from '../lib/scoring'
 import { unlockAudio } from '../lib/sound'
+import RegionSelect from '../components/RegionSelect'
 
 const ROUND_OPTIONS = [3, 5, 10]
-
-const SUB_REGION_EMOJI: Record<SubRegion, string> = {
-  'Arabian Peninsula': '🐪',
-  USA: '🇺🇸',
-  China: '🇨🇳',
-}
 
 export default function HomeScreen() {
   const settings = useGameStore((s) => s.settings)
@@ -24,6 +18,9 @@ export default function HomeScreen() {
 
   const accuracy =
     stats.roundsPlayed > 0 ? Math.round((stats.roundsCorrect / stats.roundsPlayed) * 100) : 0
+
+  // Older persisted settings may predate the city-pool toggle.
+  const cityPool: CityPool = settings.cityPool ?? 'all'
 
   return (
     <div className="screen home">
@@ -38,89 +35,61 @@ export default function HomeScreen() {
           You get a satellite image — name the city. {CITIES.length} cities worldwide.
         </p>
 
-        <div className="field">
-          <span className="fieldLabel">Difficulty</span>
-          <div className="segmented">
-            {(['easy', 'hard'] as Difficulty[]).map((d) => (
-              <button
-                key={d}
-                className={`segment${settings.difficulty === d ? ' segmentActive' : ''}`}
-                onClick={() => setSettings({ difficulty: d })}
-              >
-                {d === 'easy' ? 'Easy' : 'Hard'}
-              </button>
-            ))}
-          </div>
-          <p className="fieldHint">{DIFFICULTY_LABELS[settings.difficulty]}</p>
-        </div>
-
-        <div className="field">
-          <span className="fieldLabel">Rounds</span>
-          <div className="segmented">
-            {ROUND_OPTIONS.map((n) => (
-              <button
-                key={n}
-                className={`segment${settings.totalRounds === n ? ' segmentActive' : ''}`}
-                onClick={() => setSettings({ totalRounds: n })}
-              >
-                {n}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="field">
-          <label className="fieldLabel" htmlFor="region">
-            Region
-          </label>
-          <select
-            id="region"
-            className="select"
-            value={settings.region}
-            onChange={(e) => setSettings({ region: e.target.value as Region | 'all' })}
-          >
-            <option value="all">🌍 Whole world</option>
-            <optgroup label="Continents">
-              {CONTINENTS.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
+        <div className="fieldGrid">
+          <div className="field">
+            <span className="fieldLabel">Answer</span>
+            <div className="segmented">
+              {(['easy', 'hard'] as Difficulty[]).map((d) => (
+                <button
+                  key={d}
+                  className={`segment${settings.difficulty === d ? ' segmentActive' : ''}`}
+                  onClick={() => setSettings({ difficulty: d })}
+                >
+                  {d === 'easy' ? 'Choice' : 'Type'}
+                </button>
               ))}
-            </optgroup>
-            <optgroup label="Popular regions">
-              {SUB_REGIONS.map((r) => (
-                <option key={r} value={r}>
-                  {SUB_REGION_EMOJI[r]} {r}
-                </option>
+            </div>
+          </div>
+
+          <div className="field">
+            <span className="fieldLabel">Cities</span>
+            <div className="segmented">
+              {(['famous', 'all'] as CityPool[]).map((p) => (
+                <button
+                  key={p}
+                  className={`segment${cityPool === p ? ' segmentActive' : ''}`}
+                  onClick={() => setSettings({ cityPool: p })}
+                >
+                  {p === 'famous' ? `Famous ${FAMOUS_CITY_COUNT}` : `All ${CITIES.length}`}
+                </button>
               ))}
-            </optgroup>
-          </select>
+            </div>
+          </div>
         </div>
 
-        <div className="field fieldRow">
-          <label className="fieldLabel" htmlFor="timerToggle">
-            Round timer · 30s, speed bonus
-          </label>
-          <input
-            id="timerToggle"
-            type="checkbox"
-            className="toggle"
-            checked={settings.useTimer}
-            onChange={(e) => setSettings({ useTimer: e.target.checked })}
-          />
-        </div>
+        <div className="fieldGrid">
+          <div className="field">
+            <span className="fieldLabel">Rounds</span>
+            <div className="segmented">
+              {ROUND_OPTIONS.map((n) => (
+                <button
+                  key={n}
+                  className={`segment${settings.totalRounds === n ? ' segmentActive' : ''}`}
+                  onClick={() => setSettings({ totalRounds: n })}
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
+          </div>
 
-        <div className="field fieldRow">
-          <label className="fieldLabel" htmlFor="soundToggle">
-            Countdown sounds
-          </label>
-          <input
-            id="soundToggle"
-            type="checkbox"
-            className="toggle"
-            checked={settings.sound}
-            onChange={(e) => setSettings({ sound: e.target.checked })}
-          />
+          <div className="field">
+            <span className="fieldLabel">Region</span>
+            <RegionSelect
+              value={settings.region}
+              onChange={(region) => setSettings({ region: region as Region | 'all' })}
+            />
+          </div>
         </div>
 
         <button

@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { City, Region } from '../lib/cities'
+import type { City, CityPool, Region } from '../lib/cities'
 import { pickRounds } from '../lib/cities'
 import type { Difficulty } from '../lib/scoring'
 import { useAppStore } from './appStore'
@@ -19,6 +19,7 @@ export interface RoundResult {
 
 export interface Settings {
   difficulty: Difficulty
+  cityPool: CityPool
   totalRounds: number
   useTimer: boolean
   region: Region | 'all'
@@ -27,6 +28,7 @@ export interface Settings {
 
 const defaultSettings: Settings = {
   difficulty: 'easy',
+  cityPool: 'all',
   totalRounds: 5,
   useTimer: true,
   region: 'all',
@@ -76,6 +78,7 @@ export const useGameStore = create<GameStore>()(
             s.settings.totalRounds,
             s.settings.region,
             recentKeys('satellite'),
+            s.settings.cityPool,
           )
           useHistoryStore.getState().remember('satellite', cities.map((c) => c.id))
           return {

@@ -1,29 +1,32 @@
+/* Terra lens design language: light #f6f6f6 surfaces, flat white panels,
+   black Inter typography, #bbff52 as the single brand accent. */
 :root {
-  --bg: #04070d;
-  --bg-raise: #0b1322;
-  --glass: rgba(9, 15, 27, 0.74);
-  --glass-strong: rgba(7, 12, 22, 0.88);
-  --glass-border: rgba(255, 255, 255, 0.09);
-  --border: rgba(255, 255, 255, 0.1);
-  --border-strong: rgba(255, 255, 255, 0.22);
-  --text: #eaf1fa;
-  --muted: #93a5bf;
-  --accent: #3fa9ff;
-  --accent-2: #7c6bff;
-  --accent-press: #2b8fe0;
-  --accent-ink: #04203b;
-  --good: #2bd98a;
-  --good-bg: rgba(43, 217, 138, 0.16);
-  --bad: #ff6b6b;
-  --bad-bg: rgba(255, 107, 107, 0.16);
-  --warn: #ffb84d;
-  --radius: 22px;
-  --radius-sm: 12px;
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
-  --shadow-soft: 0 10px 34px rgba(0, 0, 0, 0.45);
-  --blur: blur(18px) saturate(150%);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  color-scheme: dark;
+  --bg: #f6f6f6;
+  --bg-raise: #ffffff;
+  --glass: rgba(255, 255, 255, 0.88);
+  --glass-strong: rgba(255, 255, 255, 0.96);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --border: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.22);
+  --text: #000;
+  --muted: #666;
+  --accent: #bbff52;
+  --accent-2: #bbff52;
+  --accent-press: #a8ea41;
+  --accent-ink: #000;
+  --good: #0c9f5e;
+  --good-bg: rgba(12, 159, 94, 0.12);
+  --bad: #e5484d;
+  --bad-bg: rgba(229, 72, 77, 0.1);
+  --warn: #b45309;
+  --radius: 20px;
+  --radius-sm: 14px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --blur: blur(14px) saturate(120%);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  color-scheme: light;
 }
 
 * {
@@ -38,10 +41,7 @@ body,
 }
 
 body {
-  background:
-    radial-gradient(900px 600px at 85% -10%, rgba(63, 169, 255, 0.14), transparent 60%),
-    radial-gradient(800px 600px at -10% 110%, rgba(124, 107, 255, 0.12), transparent 60%),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
@@ -72,38 +72,49 @@ button {
 .card {
   width: 100%;
   max-width: 540px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
-    var(--glass);
-  border: 1px solid var(--glass-border);
+  background: #fff;
+  border: 1px solid #e9e9e9;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  backdrop-filter: var(--blur);
   padding: 30px;
 }
 
 .title {
   margin: 0 0 6px;
   font-size: 2.1rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: -0.03em;
 }
 
+/* Green marker highlight, echoing the Terra chip in the hero wordmark. */
 .titleAccent {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  padding: 0 0.14em;
 }
 
 .tagline {
-  margin: 0 0 22px;
+  margin: 0 0 18px;
   color: var(--muted);
   line-height: 1.5;
 }
 
 /* ---------- form fields ---------- */
 .field {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
+}
+
+/* Two fields side by side, to keep the setup panel compact. */
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.fieldGrid .field {
+  margin-bottom: 0;
+  min-width: 0;
 }
 
 .fieldRow {
@@ -111,6 +122,16 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+/* Toggle rows inside the grid share the pill background of a control so both
+   columns read as one row of equal-height controls. */
+.fieldGrid .fieldRow {
+  padding: 11px 14px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
 }
 
 .fieldLabel {
@@ -141,10 +162,10 @@ button {
 .segmented {
   display: flex;
   gap: 6px;
-  background: rgba(0, 0, 0, 0.35);
+  background: #f2f2f2;
   padding: 5px;
   border-radius: 999px;
-  border: 1px solid var(--glass-border);
+  border: 1px solid #e5e5e5;
 }
 
 .segment {
@@ -158,12 +179,22 @@ button {
   transition: background 0.15s, color 0.15s;
 }
 
-.segment:hover {
+/* Tighter segments when packed two controls to a row. */
+.fieldGrid .segment {
+  padding: 10px 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Only inactive segments react to hover — hovering the black active segment
+   used to turn its text black-on-black. */
+.segment:hover:not(.segmentActive) {
   color: var(--text);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .segmentActive {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: #000;
   color: #fff;
 }
 
@@ -171,25 +202,154 @@ button {
   width: 100%;
   padding: 12px 14px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--glass-border);
-  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid #e5e5e5;
+  background: #fff;
   color: var(--text);
 }
 
 .toggle {
   width: 20px;
   height: 20px;
-  accent-color: var(--accent);
+  accent-color: #000;
   cursor: pointer;
 }
 
-/* ---------- buttons ---------- */
+/* ---------- custom dropdown (region picker) ---------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdownBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  background: #f2f2f2;
+  color: var(--text);
+  font-weight: 600;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.dropdownBtn:hover {
+  border-color: var(--border-strong);
+}
+
+.dropdown:has(.dropdownMenu) .dropdownBtn {
+  border-color: #000;
+}
+
+.dropdownValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dropdownIcon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35em;
+  height: 1.2em;
+  /* Keep tall emoji (🌍, 🐪) from stretching the row height. */
+  line-height: 1;
+  overflow: hidden;
+}
+
+.dropdownCaret {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+  transition: transform 0.15s;
+}
+
+.dropdownCaretOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--blur);
+  max-height: min(82vh, 560px);
+  overflow-y: auto;
+  z-index: 20;
+  /* All options fit without scrolling; hide the bar if a short viewport clips. */
+  scrollbar-width: none;
+}
+
+.dropdownMenu::-webkit-scrollbar {
+  display: none;
+}
+
+.dropdownMenu > li {
+  list-style: none;
+}
+
+.dropdownGroup {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownGroupLabel {
+  padding: 6px 12px 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.dropdownItem:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dropdownItemActive,
+.dropdownItemActive:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ---------- buttons: black pills, green on hover (landing language) ---------- */
 .btn {
   border: 1px solid transparent;
-  border-radius: 14px;
+  border-radius: 999px;
   padding: 12px 18px;
   font-weight: 700;
-  transition: transform 0.05s, background 0.15s, border-color 0.15s, box-shadow 0.2s;
+  transition: transform 0.05s, background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .btn:active {
@@ -197,29 +357,31 @@ button {
 }
 
 .btnPrimary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: #000;
   color: #fff;
-  box-shadow: 0 6px 24px rgba(63, 169, 255, 0.35);
 }
 
 .btnPrimary:hover {
-  box-shadow: 0 8px 30px rgba(63, 169, 255, 0.5);
+  background: var(--accent);
+  color: #000;
 }
 
 .btnPrimary:disabled {
-  opacity: 0.5;
-  box-shadow: none;
+  opacity: 0.4;
   cursor: default;
+  background: #000;
+  color: #fff;
 }
 
 .btnGhost {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: var(--border-strong);
-  color: var(--text);
+  background: #fff;
+  border-color: #000;
+  color: #000;
 }
 
 .btnGhost:hover {
-  background: rgba(255, 255, 255, 0.09);
+  background: #000;
+  color: #fff;
 }
 
 .btnBig {
@@ -250,8 +412,8 @@ button {
 
 .stat {
   flex: 1;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--glass-border);
+  background: #f6f6f6;
+  border: 1px solid #e9e9e9;
   border-radius: var(--radius-sm);
   padding: 12px;
   text-align: center;
@@ -260,7 +422,7 @@ button {
 .statValue {
   display: block;
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .statLabel {
@@ -318,6 +480,58 @@ button {
   position: relative;
   height: 100%;
   overflow: hidden;
+  /* In-game keeps the dark, transparent glass style — imagery reads best
+     under dark overlays — but with the green brand accent instead of the
+     old blue/purple. Every var-based overlay below flips automatically. */
+  --bg: #04070d;
+  background:
+    radial-gradient(900px 600px at 85% -10%, rgba(187, 255, 82, 0.1), transparent 60%),
+    radial-gradient(800px 600px at -10% 110%, rgba(187, 255, 82, 0.07), transparent 60%),
+    var(--bg);
+  --glass: rgba(9, 15, 27, 0.74);
+  --glass-strong: rgba(7, 12, 22, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --text: #eaf1fa;
+  --muted: #93a5bf;
+  --good: #2bd98a;
+  --good-bg: rgba(43, 217, 138, 0.16);
+  --bad: #ff6b6b;
+  --bad-bg: rgba(255, 107, 107, 0.16);
+  --warn: #ffb84d;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 10px 34px rgba(0, 0, 0, 0.45);
+  --blur: blur(18px) saturate(150%);
+  color: var(--text);
+}
+
+/* Primary actions in-game are green pills (black pills would sink into the
+   dark glass); ghosts become translucent. */
+.round .btnPrimary {
+  background: var(--accent);
+  color: #000;
+}
+
+.round .btnPrimary:hover {
+  background: var(--accent-press);
+  color: #000;
+}
+
+.round .btnPrimary:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+}
+
+.round .btnGhost {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.round .btnGhost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
 }
 
 /* The map fills everything. */
@@ -369,6 +583,8 @@ button {
 }
 
 .iconBtn {
+  display: grid;
+  place-items: center;
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -376,12 +592,16 @@ button {
   background: var(--glass);
   backdrop-filter: var(--blur);
   color: var(--text);
-  font-size: 1rem;
-  line-height: 1;
   box-shadow: var(--shadow-soft);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.iconBtn svg {
+  display: block;
 }
 
 .iconBtn:hover {
+  background: rgba(255, 255, 255, 0.14);
   border-color: var(--border-strong);
 }
 
@@ -470,7 +690,7 @@ button {
 
 .timerFill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: var(--accent);
   border-radius: 999px;
   transition: width 1s linear, background 0.3s;
 }
@@ -494,8 +714,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   width: min(620px, calc(100% - 20px));
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
-    var(--glass);
+  background: var(--glass-strong);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   box-shadow: var(--shadow);
@@ -532,7 +751,7 @@ button {
 }
 
 .choice:hover {
-  background: rgba(63, 169, 255, 0.16);
+  background: rgba(187, 255, 82, 0.16);
   border-color: var(--accent);
 }
 
@@ -563,7 +782,7 @@ button {
   min-width: 0;
   padding: 13px 16px;
   font-size: 1rem;
-  border-radius: 14px;
+  border-radius: 999px;
   border: 1px solid var(--border-strong);
   background: rgba(0, 0, 0, 0.4);
   color: var(--text);
@@ -605,8 +824,8 @@ button {
 }
 
 .suggestionActive {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #fff;
+  background: var(--accent);
+  color: #000;
 }
 
 .suggestionName {
@@ -620,7 +839,7 @@ button {
 }
 
 .suggestionActive .suggestionCountry {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* ---------- result screen (full-bleed reveal) ---------- */
@@ -630,8 +849,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   width: min(540px, calc(100% - 20px));
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
-    var(--glass);
+  background: var(--glass-strong);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   box-shadow: var(--shadow);
@@ -640,14 +858,13 @@ button {
   z-index: 30;
 }
 
-/* A calm colored hairline along the top edge signals the verdict at a glance
-   (inset shadow so it follows the panel's rounded corners cleanly). */
+/* The verdict reads as a full colored border around the panel. */
 .revealPanel.revealGood {
-  box-shadow: var(--shadow), inset 0 2px 0 color-mix(in srgb, var(--good) 75%, transparent);
+  border: 2px solid var(--good);
 }
 
 .revealPanel.revealBad {
-  box-shadow: var(--shadow), inset 0 2px 0 color-mix(in srgb, var(--bad) 70%, transparent);
+  border: 2px solid var(--bad);
 }
 
 .revealHead {
@@ -700,7 +917,7 @@ button {
 }
 
 .revealBadge.muted {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--muted);
 }
 
@@ -730,18 +947,15 @@ button {
   text-align: center;
   font-size: 3.2rem;
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   line-height: 1;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #000;
 }
 
 .finalScoreUnit {
   font-size: 1.1rem;
   font-weight: 700;
-  -webkit-text-fill-color: var(--muted);
+  color: var(--muted);
 }
 
 .summary .tagline {
@@ -764,8 +978,8 @@ button {
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--glass-border);
+  background: #f6f6f6;
+  border: 1px solid #e9e9e9;
   border-radius: var(--radius-sm);
 }
 
@@ -795,127 +1009,452 @@ button {
 }
 
 /* ============================================================
-   Main menu
+   Main menu — Terra lens landing
    ============================================================ */
-.menuInner {
-  width: 100%;
-  max-width: 1080px;
-  margin: auto;
-  padding: 16px 0;
-}
-
-.menuHeader {
-  text-align: center;
-  margin-bottom: 34px;
-}
-
-.menuLogo {
-  width: 76px;
-  height: 76px;
+.screen.menu {
   display: block;
-  margin: 0 auto 10px;
-  filter: drop-shadow(0 0 24px rgba(63, 169, 255, 0.45));
+  padding: 0;
+  background: #f6f6f6;
+  color: #000;
 }
 
-.menuHeader .title {
-  font-size: clamp(2.3rem, 5vw, 3.2rem);
-}
-
-.menuHeader .tagline {
-  margin-bottom: 0;
-}
-
-.gameGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
-}
-
-.gameCard {
+/* ---------- parallax hero (layered Figma export, 1440×810 canvas) ---------- */
+.hero {
   position: relative;
+  width: 100%;
+  /* Fill the width (1440×990 design aspect) until the composition would
+     outgrow the viewport, then fit to height — the hero is the whole page. */
+  height: min(calc(100vw * 990 / 1440), 100vh);
+  height: min(calc(100vw * 990 / 1440), 100svh);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  text-align: left;
-  padding: 26px;
-  min-height: 250px;
-  border-radius: var(--radius);
-  border: 1px solid var(--glass-border);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012)),
-    var(--glass);
-  box-shadow: var(--shadow);
-  backdrop-filter: var(--blur);
-  color: var(--text);
-  transition: transform 0.12s ease, border-color 0.15s, box-shadow 0.2s;
+  background: #f6f6f6;
+  container-type: size;
+  /* 1 design px of the 1440×990 Figma frame. The hero's height already
+     encodes the width/height cap, so the unit derives from height alone. */
+  --u: calc(100cqh / 990);
 }
 
-.gameCard::before {
-  content: '';
+.heroLayer {
   position: absolute;
-  top: -70px;
-  right: -70px;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--card-accent, var(--accent)) 0%, transparent 70%);
-  opacity: 0.22;
-  transition: opacity 0.2s;
+  /* Center via layout (not translate) and snap to whole pixels — fractional
+     compositor offsets rasterize the text layer between pixels and blur it. */
+  left: calc(50% - var(--u) * 720);
+  left: round(calc(50% - var(--u) * 720), 1px);
+}
+
+/* Layers carry transforms only while actually scrolled (class set from JS).
+   At rest the hero paints as one flat layer, so the wordmark gets native
+   subpixel antialiasing instead of a GPU-rasterized (grayscale) copy. */
+.heroScrolled .heroLayer {
+  /* --sy is the scroll offset in px (set from JS); --speed varies per layer.
+     The parallax offset is rounded so layers stay on the pixel grid. */
+  transform: translate3d(0, calc(var(--sy, 0px) * var(--speed, 0)), 0);
+  transform: translate3d(0, round(calc(var(--sy, 0px) * var(--speed, 0)), 1px), 0);
+}
+
+/* Every layer is locked to the same 1440 design-px stage, centered — the
+   whole composition scales as one package. */
+.heroBg {
+  top: 0;
+  width: calc(var(--u) * 1440);
+  --speed: 0.35;
+  /* fade the sky's sharp bottom edge out — during the entrance it hangs in
+     the open until the grass planet (astronaut layer) settles over it */
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+}
+.heroText {
+  top: 0;
+  width: calc(var(--u) * 1440);
+  height: 100%;
+  --speed: 0.18;
   pointer-events: none;
 }
-
-.gameCard:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--card-accent, var(--accent)) 55%, transparent);
+.heroAstronaut {
+  bottom: 0;
+  width: calc(var(--u) * 1440);
+  --speed: 0;
+  /* the export has one column of leftover dark canvas pixels at x=0 that
+     otherwise draws a dark seam down the stage's left edge — clip it off */
+  clip-path: inset(0 0 0 calc(var(--u) * 2));
+}
+/* fog2 is the only fog that moves on scroll, and only downward (positive
+   speed; the scroll offset is never negative, so it can never rise above
+   its resting position). fog3 and fog4 stay put. */
+.heroFog2 {
+  bottom: 0;
+  width: calc(var(--u) * 1440);
+  --speed: 0.12;
+}
+.heroFog3 {
+  bottom: 0;
+  width: calc(var(--u) * 1440);
+  --speed: 0;
+}
+/* fog4 spans the full 1440×990 frame (not the 810 canvas) and frames the
+   top corners; topmost image layer, per the Figma stack. */
+.heroFog4 {
+  top: 0;
+  width: calc(var(--u) * 1440);
+  --speed: 0;
 }
 
-.gameCard:hover::before {
-  opacity: 0.4;
+/* ---------- entrance: the layers assemble with depth on load ---------- */
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--enter, 0px), 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.gameIcon {
-  width: 62px;
-  height: 62px;
+.heroLayer {
+  /* `backwards` (not forwards) so the animation releases the transform when
+     it ends and the scroll parallax can take over. */
+  animation: heroEnter 1s cubic-bezier(0.22, 1, 0.36, 1) var(--enter-delay, 0s) backwards;
+}
+
+.heroBg {
+  --enter: -20px;
+}
+.heroTextBack {
+  --enter: 36px;
+  --enter-delay: 0.45s;
+}
+.heroAstronaut {
+  --enter: 56px;
+  --enter-delay: 0.15s;
+}
+/* fog2 may only ever move down — it enters from above. fog3/fog4 skip the
+   entrance entirely: they're visible from the first frame so the sharp
+   edges of the image layers are always covered. */
+.heroFog2 {
+  --enter: -28px;
+  --enter-delay: 0.3s;
+}
+.heroFog3,
+.heroFog4 {
+  animation: none;
+}
+.heroTextFront {
+  --enter: 28px;
+  --enter-delay: 0.55s;
+}
+
+/* ---------- wordmark (positions/sizes straight from the Figma frame) ---------- */
+.heroMark {
+  margin: 0;
+}
+
+.heroLens {
+  position: absolute;
+  top: calc(var(--u) * 145);
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: calc(var(--u) * 200);
+  line-height: 1.21;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: #000;
+}
+
+.heroTerra {
+  position: absolute;
+  top: calc(var(--u) * 170);
+  left: calc(50% - var(--u) * 130);
+  width: calc(var(--u) * 116);
+  height: calc(var(--u) * 47);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #bbff52;
+  font-size: calc(var(--u) * 36);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #000;
+  z-index: 1;
+}
+
+.heroGames {
+  position: absolute;
+  top: calc(var(--u) * 345);
+  left: calc(50% + var(--u) * 123);
+  font-size: calc(var(--u) * 36);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: #000;
+}
+
+/* ---------- green side rail (collapsed sidebar) ---------- */
+.sideRail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  z-index: 40;
+  /* 1fr | auto | 1fr keeps the brand text at the exact vertical middle,
+     with the arrow pinned top and the games hint pinned bottom */
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  justify-items: center;
+  padding: 20px 0;
+  border: none;
+  background: #bbff52;
+  color: #000;
+  transition: width 0.18s ease;
+}
+
+.sideRail:hover {
+  width: 68px;
+}
+
+.sideRailText {
+  align-self: center;
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.sideRailGames {
+  align-self: end;
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.sideRailArrow {
+  align-self: start;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #000;
+  color: #bbff52;
+  animation: railNudge 2.2s ease-in-out infinite;
+}
+
+.sideRailArrow svg {
   display: block;
-  margin-bottom: 4px;
 }
 
-.gameTitle {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+/* Keep the nudge running on hover (just a touch faster for feedback). */
+.sideRail:hover .sideRailArrow {
+  animation-duration: 1.4s;
 }
 
-.gameTagline {
-  color: var(--muted);
-  font-size: 0.94rem;
-  line-height: 1.5;
+/* Rocks a little left and right around center (average stays centered),
+   rather than drifting off to one side. */
+@keyframes railNudge {
+  0%,
+  100% {
+    translate: -3px 0;
+  }
+  50% {
+    translate: 3px 0;
+  }
 }
 
-.gameFooter {
-  margin-top: auto;
-  padding-top: 14px;
-  width: 100%;
+/* ---------- expanded overlay panel ---------- */
+.sideOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.sideScrim {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  animation: scrimIn 0.25s ease;
+}
+
+@keyframes scrimIn {
+  from {
+    opacity: 0;
+  }
+}
+
+.sidePanel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: min(520px, 92vw);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 32px;
+  background: #bbff52;
+  color: #000;
+  animation: panelIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes panelIn {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+/* Reverse slide on close so dismissing the panel is animated too. */
+.sideOverlayClosing .sidePanel {
+  animation: panelOut 0.3s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+}
+
+.sideOverlayClosing .sideScrim {
+  animation: scrimOut 0.3s ease forwards;
+}
+
+@keyframes panelOut {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrimOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.sidePanelHead {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
 }
 
-.gameBest {
-  font-size: 0.85rem;
-  color: var(--muted);
+.sidePanelTitle {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
 }
 
-.gameBest strong {
-  color: var(--card-accent, var(--accent));
+.sideClose {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #000;
+  color: #bbff52;
 }
 
-.gamePlay {
-  font-weight: 700;
+.sideClose svg {
+  display: block;
+}
+
+.sideGames {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+}
+
+.sideGames li {
+  border-top: 2px solid #000;
+  animation: itemIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) calc(0.12s + var(--i, 0) * 0.07s)
+    backwards;
+}
+
+.sideGames li:last-child {
+  border-bottom: 2px solid #000;
+}
+
+@keyframes itemIn {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
+
+.sideGame {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  color: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sideGame:hover {
+  background: #000;
+  color: #bbff52;
+}
+
+.sideGameIndex {
   font-size: 0.9rem;
-  color: var(--card-accent, var(--accent));
+  font-weight: 900;
+  opacity: 0.65;
+}
+
+.sideGameBody {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.sideGameTitle {
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.sideGameTagline {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.sideGameMeta {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.sideGameGo {
+  font-weight: 900;
+}
+
+.sidePanelFoot {
+  margin: auto 0 0;
+  font-size: 0.82rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 700px) {
+  .sideRail {
+    width: 44px;
+  }
+  .sideRail:hover {
+    width: 44px;
+  }
+  .sideRailText {
+    font-size: 0.95rem;
+  }
+  .sideRailArrow {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 /* ============================================================
@@ -933,8 +1472,11 @@ button {
   box-shadow: var(--shadow-soft);
 }
 
+/* Target city gets the green marker highlight, like the hero's Terra chip. */
 .locatePrompt strong {
-  color: var(--accent);
+  background: var(--accent);
+  color: #000;
+  padding: 0 5px;
 }
 
 .locateResult {
@@ -1040,13 +1582,13 @@ button {
 .tChipGood {
   border-color: var(--good);
   background: var(--good-bg);
-  color: #d6ffe9;
+  color: var(--good);
 }
 
 .tChipWarn {
   border-color: var(--warn);
   background: rgba(255, 184, 77, 0.14);
-  color: #ffe2b0;
+  color: var(--warn);
 }
 
 .tChipDim {
@@ -1097,7 +1639,7 @@ button {
 }
 
 .travleResultBadge.muted {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.06);
   color: var(--muted);
 }
 
@@ -1242,6 +1784,7 @@ button {
   border-top: 1px solid var(--glass-border) !important;
 }
 
+/* Map controls live on the dark in-game glass — invert the native icons. */
 .maplibregl-ctrl button .maplibregl-ctrl-icon {
   filter: invert(1) brightness(1.6);
 }
@@ -1279,9 +1822,6 @@ button {
   .choice {
     padding: 11px 12px;
     font-size: 0.92rem;
-  }
-  .gameCard {
-    min-height: 0;
   }
   .travleNode {
     font-size: 0.88rem;
