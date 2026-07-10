@@ -88,6 +88,20 @@ export function citiesInRegion(region?: Region | 'all'): City[] {
   return CITIES.filter((c) => c.continent === region)
 }
 
+/**
+ * The pool a round should actually draw from: a region filter narrowed by the
+ * city pool — except the hand-picked "popular regions" (Arabian Peninsula,
+ * USA, China), which are already a small curated set. Layering the "famous"
+ * filter on top of those would collapse them to almost nothing (Arabian
+ * Peninsula only has Dubai in FAMOUS_CITY_IDS), so sub-regions always use
+ * every city they contain regardless of the pool setting.
+ */
+export function citiesForRound(region: Region | 'all' | undefined, pool: CityPool): City[] {
+  const regionCities = citiesInRegion(region)
+  if (region && SUB_REGIONS.includes(region as SubRegion)) return regionCities
+  return citiesInPool(regionCities, pool)
+}
+
 /** Turn an ISO country code into its flag emoji (regional indicator letters). */
 export function flagEmoji(countryCode: string): string {
   const cc = countryCode.toUpperCase().replace(/[^A-Z]/g, '')
@@ -149,7 +163,7 @@ export function pickRounds(
   recent: readonly string[] = [],
   cityPool: CityPool = 'all',
 ): City[] {
-  const pool = citiesInPool(citiesInRegion(region), cityPool)
+  const pool = citiesForRound(region, cityPool)
   return orderByFreshness(pool, (c) => c.id, recent).slice(0, Math.min(n, pool.length))
 }
 

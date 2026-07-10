@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react'
 import { useGameStore } from '../store/gameStore'
 import { useGameNav } from '../lib/nav'
-import { citiesInPool, citiesInRegion } from '../lib/cities'
+import { citiesForRound } from '../lib/cities'
 import { ROUND_SECONDS, computeScore } from '../lib/scoring'
 import { playTick, playTimeUp } from '../lib/sound'
 import GuessInput from '../components/GuessInput'
@@ -26,7 +26,7 @@ export default function RoundScreen() {
   const answeredRef = useRef(false)
   // Keep multiple-choice distractors on-theme with the chosen region and pool.
   const pool = useMemo(
-    () => citiesInPool(citiesInRegion(settings.region), settings.cityPool),
+    () => citiesForRound(settings.region, settings.cityPool),
     [settings.region, settings.cityPool],
   )
 
@@ -89,6 +89,7 @@ export default function RoundScreen() {
         onQuit={exitToMenu}
         muted={!settings.sound}
         onToggleMute={() => setSettings({ sound: !settings.sound })}
+        timer={settings.useTimer && <Timer secondsLeft={secondsLeft} total={ROUND_SECONDS} />}
       />
       {settings.useTimer && (
         <div className="timerOverlay">

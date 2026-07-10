@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import {
   CITIES,
   buildOptions,
+  citiesForRound,
   citiesInRegion,
   flagEmoji,
   orderByFreshness,
@@ -53,6 +54,19 @@ describe('pickRounds', () => {
     const r = pickRounds(5, 'Arabian Peninsula')
     const codes = new Set(['SA', 'AE', 'QA', 'KW', 'BH', 'OM', 'YE'])
     expect(r.every((c) => codes.has(c.countryCode))).toBe(true)
+  })
+
+  it('ignores the "famous" pool for a popular sub-region so it is not reduced to a single city', () => {
+    const r = pickRounds(5, 'Arabian Peninsula', [], 'famous')
+    const codes = new Set(['SA', 'AE', 'QA', 'KW', 'BH', 'OM', 'YE'])
+    expect(r.every((c) => codes.has(c.countryCode))).toBe(true)
+    expect(new Set(r.map((c) => c.id)).size).toBe(5)
+  })
+
+  it('still applies the "famous" pool for continents', () => {
+    const r = citiesForRound('Europe', 'famous')
+    expect(r.length).toBeGreaterThan(1)
+    expect(r.every((c) => c.continent === 'Europe')).toBe(true)
   })
 })
 

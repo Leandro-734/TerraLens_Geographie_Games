@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { CloseIcon, SpeakerIcon } from './icons'
 
 export default function ScoreBar({
@@ -8,6 +9,7 @@ export default function ScoreBar({
   onQuit,
   muted,
   onToggleMute,
+  timer,
 }: {
   round: number
   total: number
@@ -16,16 +18,20 @@ export default function ScoreBar({
   onQuit: () => void
   muted?: boolean
   onToggleMute?: () => void
+  // Rendered between the close button and the stat pill — on mobile this
+  // grows to fill the row instead of the centered floating overlay.
+  timer?: ReactNode
 }) {
   return (
     <div className="hud">
       <button className="iconBtn" onClick={onQuit} aria-label="Quit game" title="Quit game">
         <CloseIcon />
       </button>
+      {timer && <div className="hudTimerSlot">{timer}</div>}
       <div className="hudRight">
         {onToggleMute && (
           <button
-            className="iconBtn"
+            className="iconBtn muteBtn"
             onClick={onToggleMute}
             aria-label={muted ? 'Unmute' : 'Mute'}
             title={muted ? 'Unmute' : 'Mute'}
@@ -35,7 +41,8 @@ export default function ScoreBar({
         )}
         <div className="statPill">
           <span className="statPillRound">
-            Round {round}/{total}
+            <span className="statPillRoundLabel">Round </span>
+            {round}/{total}
           </span>
           {streak >= 2 && <span className="statPillStreak">🔥 {streak}</span>}
           <span className="statPillScore">{score.toLocaleString()} pts</span>

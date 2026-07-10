@@ -611,6 +611,13 @@ button {
   gap: 8px;
 }
 
+/* Inline timer slot between the close button and the stat pill — collapsed
+   on desktop (the centered .timerOverlay is used instead), and grown to
+   fill the row on mobile. See the max-width: 520px block below. */
+.hudTimerSlot {
+  display: none;
+}
+
 /* One combined pill (round/guesses left · score) anchored top-right. */
 .statPill {
   display: inline-flex;
@@ -1249,11 +1256,6 @@ button {
   display: block;
 }
 
-/* Keep the nudge running on hover (just a touch faster for feedback). */
-.sideRail:hover .sideRailArrow {
-  animation-duration: 1.4s;
-}
-
 /* Rocks a little left and right around center (average stays centered),
    rather than drifting off to one side. */
 @keyframes railNudge {
@@ -1790,6 +1792,25 @@ button {
 }
 
 /* ============================================================
+   Medium screens — too narrow for the viewport-centered timer to
+   clear the HUD pills, too wide to need the mobile layout's flex-grown
+   bar. Use the inline slot but keep the timer's own fixed width, just
+   centered in the gap between the close button and the audio/pill
+   group so the spacing on either side stays equal.
+   ============================================================ */
+@media (min-width: 521px) and (max-width: 700px) {
+  .timerOverlay {
+    display: none;
+  }
+  .hudTimerSlot {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+}
+
+/* ============================================================
    Small screens
    ============================================================ */
 @media (max-width: 520px) {
@@ -1806,12 +1827,44 @@ button {
     padding: 7px 12px;
     font-size: 0.84rem;
   }
+  /* Drop the "Round" word — the pill just reads "N/total" — to keep the
+     top row tight now that the timer bar shares it. */
+  .statPillRoundLabel {
+    display: none;
+  }
   .overlayPrompt {
     top: 58px;
     max-width: min(680px, calc(100% - 20px));
   }
+  /* The centered floating timer is replaced by the inline bar in the HUD
+     row (see .hudTimerSlot). */
   .timerOverlay {
-    top: 58px;
+    display: none;
+  }
+  .hudTimerSlot {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+  }
+  .hudTimerSlot .timer {
+    width: 100%;
+    padding: 6px 12px 6px 10px;
+  }
+  .hudTimerSlot .timerTrack {
+    flex: 1;
+    width: auto;
+  }
+  /* Pull the mute toggle out of the top row and stack it under the stat
+     pill so the timer bar can use the freed-up space; the zoom control
+     moves down to make room below it. */
+  .muteBtn {
+    position: absolute;
+    top: 54px;
+    right: 14px;
+    z-index: 31;
+  }
+  .maplibregl-ctrl-top-right {
+    top: 100px;
   }
   .guessPanel,
   .revealPanel {
