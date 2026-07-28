@@ -653,8 +653,14 @@ button {
 .overlayPrompt {
   position: absolute;
   top: 11px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Centred by auto margins rather than left:50% + translate: a box offset
+     from the left edge only gets the space to its *right* to lay out in, which
+     silently squeezed the widest prompts (Country Trail's endpoint pills) into
+     wrapping long before they ran out of room. */
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin-inline: auto;
   z-index: 25;
   /* Reserve room on both sides so the centered prompt sits on the HUD row
      without ever colliding with the close button or the info pill. */
@@ -1019,7 +1025,13 @@ button {
    Main menu — Terra lens landing
    ============================================================ */
 .screen.menu {
-  display: block;
+  /* The hero is only as tall as its own aspect allows; on viewports that are
+     taller than the composition (tablets, split-screen, portrait laptops) the
+     leftover space is split above and below instead of all falling below. */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
   padding: 0;
   background: #f6f6f6;
   color: #000;
@@ -1033,12 +1045,28 @@ button {
      outgrow the viewport, then fit to height — the hero is the whole page. */
   height: min(calc(100vw * 990 / 1440), 100vh);
   height: min(calc(100vw * 990 / 1440), 100svh);
+  flex: none;
   overflow: hidden;
   background: #f6f6f6;
   container-type: size;
   /* 1 design px of the 1440×990 Figma frame. The hero's height already
      encodes the width/height cap, so the unit derives from height alone. */
   --u: calc(100cqh / 990);
+}
+
+/* Below the design's own 1440:990 ratio the stage is capped by the width, so it
+   no longer reaches the bottom of the screen — and the mist under the hill,
+   which the export runs right up to the stage's edge, ends on a visible
+   hairline mid-page. Dissolve that last band into the page background. */
+@media (max-aspect-ratio: 1440 / 990) {
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 14%;
+    background: linear-gradient(180deg, rgba(246, 246, 246, 0) 0%, #f6f6f6 78%);
+    pointer-events: none;
+  }
 }
 
 .heroLayer {
@@ -1444,18 +1472,91 @@ button {
 }
 
 @media (max-width: 700px) {
+  :root {
+    /* Height of the brand rail once it lies across the bottom of the screen. */
+    --rail-h: calc(54px + env(safe-area-inset-bottom, 0px));
+  }
+  /* Fitting the whole 1440-wide frame into a phone's width leaves the hero a
+     thin band across the top of a tall screen. Scale to a narrower centre
+     slice of the frame instead: the wordmark and astronaut (which live well
+     inside it) grow to phone size, and overflow:hidden trims the outer sky,
+     hill and fog — they read as full-bleed. The 100svh cap keeps the taller
+     composition from ever exceeding the screen. */
+  .hero {
+    height: min(calc(100vw * 990 / 640), calc(100vh - var(--rail-h)));
+    height: min(calc(100vw * 990 / 640), calc(100svh - var(--rail-h)));
+  }
+  /* A vertical rail down a phone's edge costs the hero 44px of width and
+     carries three lines of sideways text. Lay it across the bottom instead:
+     the composition gets the full width, and the games link lands under the
+     thumb. Keep the screen's centring clear of it. */
+  .screen.menu {
+    padding-bottom: var(--rail-h);
+  }
   .sideRail {
-    width: 44px;
+    top: auto;
+    right: 0;
+    width: auto;
+    height: var(--rail-h);
+    grid-template-rows: none;
+    /* 1fr | auto | 1fr — the same trick the vertical rail uses, turned on its
+       side: the brand text sits at the true centre with the arrow pinned left
+       and the games hint pinned right. */
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px env(safe-area-inset-bottom, 0px);
   }
   .sideRail:hover {
-    width: 44px;
+    width: auto;
+  }
+  .sideRailText,
+  .sideRailGames {
+    writing-mode: horizontal-tb;
+    rotate: none;
+    align-self: center;
   }
   .sideRailText {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+  }
+  .sideRailGames {
+    justify-self: end;
+  }
+  /* Three columns don't fit a phone: the title wrapped to two lines while the
+     score column squeezed into a sliver. Drop the meta onto its own line under
+     the title, where it can spread across the full width of the row. */
+  .sidePanel {
+    padding: 24px 20px;
+  }
+  .sideGames {
+    margin-top: 20px;
+  }
+  .sideGame {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 14px 6px;
+  }
+  /* flex-basis 0 keeps the title beside its index instead of wrapping the
+     whole block below it once the text outgrows the row. */
+  .sideGameBody {
+    flex: 1;
+  }
+  .sideGameTitle {
+    font-size: 1.25rem;
+  }
+  .sideGameMeta {
+    flex-basis: 100%;
+    margin-left: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
   }
   .sideRailArrow {
-    width: 28px;
-    height: 28px;
+    align-self: center;
+    justify-self: start;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -1502,11 +1603,13 @@ button {
   gap: 5px;
 }
 
+/* Never wraps: a pair of long names shrinks the pills (their labels wrap
+   inside) rather than dropping the destination below a sideways arrow. */
 .travleRoute {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
@@ -1514,6 +1617,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
   padding: 8px 14px;
   border-radius: 999px;
   background: var(--glass);
@@ -1524,15 +1628,21 @@ button {
   font-size: 0.98rem;
 }
 
+/* The flag keeps its size while the label takes the squeeze. */
+.travleNode img {
+  flex: none;
+}
+
 .travleNode.linked {
   border-color: var(--good);
   background: var(--good-bg);
 }
 
 .travleArrow {
+  display: inline-flex;
+  align-items: center;
   color: var(--muted);
-  font-size: 1.2rem;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
 }
 
 .travlePar {
@@ -1711,6 +1821,15 @@ button {
   margin-bottom: 10px;
 }
 
+/* One flex item, so the buttons stay together and move as a block to the row
+   below the label when they can't sit beside it. */
+.hintBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
 .hintLabel {
   color: var(--muted);
   font-size: 0.74rem;
@@ -1791,6 +1910,17 @@ button {
   filter: invert(1) brightness(1.6);
 }
 
+/* Sharing the HUD row costs the prompt 340px of width, which on a phone left
+   Country Trail's two endpoint pills fighting over ~230px — the destination
+   wrapped under a dangling arrow and the par line broke in two. Below this
+   width the prompt drops onto its own row under the HUD and takes the lot. */
+@media (max-width: 700px) {
+  .overlayPrompt {
+    top: 58px;
+    max-width: min(680px, calc(100% - 20px));
+  }
+}
+
 /* ============================================================
    Medium screens — too narrow for the viewport-centered timer to
    clear the HUD pills, too wide to need the mobile layout's flex-grown
@@ -1807,6 +1937,11 @@ button {
     flex: 1;
     justify-content: center;
     min-width: 0;
+  }
+  /* The map's zoom control is still up at the top-right in this band (below
+     521px it drops down the page) — keep the widest prompts clear of it. */
+  .overlayPrompt {
+    max-width: calc(100% - 120px);
   }
 }
 
@@ -1831,10 +1966,6 @@ button {
      top row tight now that the timer bar shares it. */
   .statPillRoundLabel {
     display: none;
-  }
-  .overlayPrompt {
-    top: 58px;
-    max-width: min(680px, calc(100% - 20px));
   }
   /* The centered floating timer is replaced by the inline bar in the HUD
      row (see .hudTimerSlot). */

@@ -14,6 +14,23 @@ export function CloseIcon() {
   )
 }
 
+/** Two-headed connector arrow — used where two items are linked without
+ *  implying a direction from one to the other. */
+export function LinkArrowIcon() {
+  return (
+    <svg viewBox="0 0 20 12" width="20" height="12" aria-hidden="true">
+      <path
+        d="M2 6h16M2 6l4-4M2 6l4 4M18 6l-4-4M18 6l-4 4"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  )
+}
+
 export function SpeakerIcon({ muted }: { muted: boolean }) {
   return (
     <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">

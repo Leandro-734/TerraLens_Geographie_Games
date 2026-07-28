@@ -8,9 +8,12 @@ import Flag from './Flag'
 
 export default function AutocompleteInput({
   city,
+  pool = CITIES,
   onGuess,
 }: {
   city: City
+  /** Cities the suggestions are drawn from — scoped to the round's region/type. */
+  pool?: City[]
   onGuess: (label: string, correct: boolean) => void
 }) {
   const [query, setQuery] = useState('')
@@ -42,8 +45,8 @@ export default function AutocompleteInput({
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  const fuse = useMemo(() => createCityFuse(CITIES), [])
-  const suggestions = useMemo(() => searchCities(fuse, CITIES, query, 6), [fuse, query])
+  const fuse = useMemo(() => createCityFuse(pool), [pool])
+  const suggestions = useMemo(() => searchCities(fuse, pool, query, 6), [fuse, pool, query])
 
   const submit = (text: string) => {
     if (!text.trim()) return

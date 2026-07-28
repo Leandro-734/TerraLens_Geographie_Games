@@ -3,9 +3,9 @@ import { useAppStore } from '../../store/appStore'
 import { useGameNav } from '../../lib/nav'
 import { recentKeys, useHistoryStore } from '../../store/historyStore'
 import Flag from '../../components/Flag'
-import { CloseIcon } from '../../components/icons'
+import { CloseIcon, LinkArrowIcon } from '../../components/icons'
 import { useStickyFocus } from '../../lib/useStickyFocus'
-import { travleTrailScore } from '../../lib/scoring'
+import { TRAVLE_BASE_POINTS, TRAVLE_PENALTY, travleTrailScore } from '../../lib/scoring'
 import type { Puzzle } from '../../lib/countries'
 import {
   connectedFrom,
@@ -23,6 +23,8 @@ const TravleMap = lazy(() => import('./TravleMap'))
 
 type Phase = 'intro' | 'playing' | 'solved' | 'failed'
 
+type Mode = 'simple' | 'hard'
+
 // Hint stages, revealed strictly in order.
 const HINT_STAGES: { label: string }[] = [
   { label: '🗺️ Continents' },
@@ -31,17 +33,26 @@ const HINT_STAGES: { label: string }[] = [
   { label: '🔤 Initials' },
 ]
 
+/**
+ * Hints handed out for free at the start of a trail. Simple mode opens with the
+ * continents shaded in — so that first stage is already spent: it never appears
+ * in the hint row, and every trail starts 100 points down (900 max, not 1000).
+ */
+const FREE_HINTS: Record<Mode, number> = { simple: 1, hard: 0 }
+
 export default function TravleGame() {
   const { exitToMenu } = useGameNav()
   const recordGame = useAppStore((s) => s.recordGame)
   const best = useAppStore((s) => s.stats.travle.bestScore)
 
   const [phase, setPhase] = useState<Phase>('intro')
+  const [mode, setMode] = useState<Mode>('simple')
   const [puzzle, setPuzzle] = useState<Puzzle | null>(null)
   const [guessed, setGuessed] = useState<string[]>([])
   const [query, setQuery] = useState('')
   const [message, setMessage] = useState('')
-  const [hintLevel, setHintLevel] = useState(0) // number of hint stages revealed (0–4)
+  // Number of hint stages revealed (0–4). Starts at the mode's free-hint count.
+  const [hintLevel, setHintLevel] = useState(FREE_HINTS.simple)
   const [runScore, setRunScore] = useState(0)
   const [trailsSolved, setTrailsSolved] = useState(0)
   const [lastSolve, setLastSolve] = useState<{ score: number; extra: number; hints: number } | null>(null)
@@ -54,6 +65,11 @@ export default function TravleGame() {
   const guessesLeft = Math.max(0, budget - guessed.length)
   const suggestions = useMemo(() => searchCountries(query, 6), [query])
 
+  const freeHints = FREE_HINTS[mode]
+  // Best score a trail can pay out in this mode — the free hints are already
+  // deducted, so simple mode tops out at 900.
+  const maxTrailScore = TRAVLE_BASE_POINTS - TRAVLE_PENALTY * freeHints
+
   const hints: Hints = {
     continents: hintLevel >= 1,
     nextOutline: hintLevel >= 2,
@@ -62,21 +78,26 @@ export default function TravleGame() {
   }
 
   // Classify each guessed country for colouring: on the winning route (green),
-  // connected but redundant (orange), or not linked to the start (grey).
+  // connected but redundant (orange), or not linked to either endpoint (grey).
+  // The two endpoints are just the two ends of the trail, not a direction to
+  // travel in, so a country touching either one counts as connected.
   const cls = useMemo(() => {
     const empty = { route: [] as string[], redundant: [] as string[], off: [] as string[], solved: false }
     if (!puzzle) return empty
     const allowed = new Set([puzzle.start.name, puzzle.end.name, ...guessed])
-    const reach = connectedFrom(puzzle.start.name, allowed)
-    const solved = reach.has(puzzle.end.name)
+    const reachStart = connectedFrom(puzzle.start.name, allowed)
+    const solved = reachStart.has(puzzle.end.name)
     let routeSet = new Set<string>()
     if (solved) {
       const path = shortestPathWithin(puzzle.start.name, puzzle.end.name, allowed)
       if (path) routeSet = new Set(path.filter((n) => n !== puzzle.start.name && n !== puzzle.end.name))
     }
-    const off = guessed.filter((n) => !reach.has(n))
-    const route = solved ? guessed.filter((n) => routeSet.has(n)) : guessed.filter((n) => reach.has(n))
-    const redundant = solved ? guessed.filter((n) => reach.has(n) && !routeSet.has(n)) : []
+    const connected = solved
+      ? reachStart
+      : new Set([...reachStart, ...connectedFrom(puzzle.end.name, allowed)])
+    const off = guessed.filter((n) => !connected.has(n))
+    const route = solved ? guessed.filter((n) => routeSet.has(n)) : guessed.filter((n) => connected.has(n))
+    const redundant = solved ? guessed.filter((n) => connected.has(n) && !routeSet.has(n)) : []
     return { route, redundant, off, solved }
   }, [puzzle, guessed])
 
@@ -97,7 +118,7 @@ export default function TravleGame() {
     setGuessed([])
     setQuery('')
     setMessage('')
-    setHintLevel(0)
+    setHintLevel(freeHints)
     setLastSolve(null)
     setResultView('mine')
     setPhase('playing')
@@ -136,7 +157,8 @@ export default function TravleGame() {
       const score = travleTrailScore(next.length, optimalBetween, hintLevel)
       setRunScore((s) => s + score)
       setTrailsSolved((t) => t + 1)
-      setLastSolve({ score, extra, hints: hintLevel })
+      // Only hints the player actually chose are worth reporting back.
+      setLastSolve({ score, extra, hints: hintLevel - freeHints })
       setMessage('')
       setPhase('solved')
     } else if (next.length >= budget) {
@@ -144,10 +166,10 @@ export default function TravleGame() {
       setMessage('')
       setPhase('failed')
     } else {
-      const links = connectedFrom(
-        puzzle.start.name,
-        new Set([puzzle.start.name, puzzle.end.name, ...next]),
-      ).has(c.name)
+      const allowedNext = new Set([puzzle.start.name, puzzle.end.name, ...next])
+      const links =
+        connectedFrom(puzzle.start.name, allowedNext).has(c.name) ||
+        connectedFrom(puzzle.end.name, allowedNext).has(c.name)
       setMessage(links ? `${c.name} — linked to the trail ✓` : `${c.name} — not linked yet`)
     }
   }
@@ -178,9 +200,33 @@ export default function TravleGame() {
             🧭 Country <span className="titleAccent">Trail</span>
           </h1>
           <p className="tagline">
-            Link the two countries by naming a chain of bordering countries. Each trail is worth
-            1000 points — lose 100 for every extra country and every hint.
+            Link the two countries by naming a chain of bordering countries. Each trail is worth{' '}
+            {maxTrailScore} points — lose 100 for every extra country and every hint.
           </p>
+
+          <div className="field">
+            <span className="fieldLabel">Mode</span>
+            <div className="segmented">
+              {(['simple', 'hard'] as Mode[]).map((m) => (
+                <button
+                  key={m}
+                  className={`segment${mode === m ? ' segmentActive' : ''}`}
+                  onClick={() => {
+                    setMode(m)
+                    setHintLevel(FREE_HINTS[m])
+                  }}
+                >
+                  {m === 'simple' ? 'Simple' : 'Hard'}
+                </button>
+              ))}
+            </div>
+            <p className="fieldHint">
+              {mode === 'simple'
+                ? 'The globe starts with the continents shaded in — that free hint is the 100 points you give up.'
+                : 'Bare globe. Nothing is spent for you, so all four hints — and the full 1000 — are yours.'}
+            </p>
+          </div>
+
           <button className="btn btnPrimary btnBig" onClick={startRun}>
             ▶ Play
           </button>
@@ -199,7 +245,10 @@ export default function TravleGame() {
                 <strong style={{ color: 'var(--good)' }}>Green</strong> = on the winning route,{' '}
                 <strong style={{ color: '#ffb84d' }}>orange</strong> = connected but not needed.
               </li>
-              <li>Hints unlock in order (continents → next → all outlines → initials), −100 each.</li>
+              <li>
+                Hints unlock in order (continents → next → all outlines → initials), −100 each.
+                {mode === 'simple' && ' Simple mode spends the continents hint for you.'}
+              </li>
             </ul>
           </details>
         </div>
@@ -296,7 +345,9 @@ export default function TravleGame() {
               <Flag code={puzzle.start.code} size={20} />
               {puzzle.start.name}
             </span>
-            <span className="travleArrow">→</span>
+            <span className="travleArrow">
+              <LinkArrowIcon />
+            </span>
             <span className={`travleNode${cls.solved ? ' linked' : ''}`}>
               <Flag code={puzzle.end.code} size={20} />
               {puzzle.end.name}
@@ -314,7 +365,7 @@ export default function TravleGame() {
         {phase === 'solved' && lastSolve && (
           <div className="travleResult">
             <span className="travleVerdict good">
-              {lastSolve.score === 1000 ? 'Perfect' : 'Solved'}
+              {lastSolve.score === maxTrailScore ? 'Perfect' : 'Solved'}
             </span>
             <span className="travleResultBadge good">+{lastSolve.score.toLocaleString()} pts</span>
           </div>
@@ -391,7 +442,13 @@ export default function TravleGame() {
           <>
             <div className="hintRow">
               <span className="hintLabel">Hints −100 each</span>
-              {HINT_STAGES.map((_, i) => hintBtn(i))}
+              {/* The buttons are grouped so a narrow panel drops them below the
+                  label as a block, instead of breaking the row mid-way. */}
+              <div className="hintBtns">
+                {/* Stages already spent by the mode (simple mode's continents) are
+                    live on the map but aren't the player's to buy — leave them out. */}
+                {HINT_STAGES.map((_, i) => (i < freeHints ? null : hintBtn(i)))}
+              </div>
             </div>
             <div className="autocomplete">
               {suggestions.length > 0 && (

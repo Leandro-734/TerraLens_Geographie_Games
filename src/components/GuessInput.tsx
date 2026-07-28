@@ -18,6 +18,6 @@ export default function GuessInput({
   return difficulty === 'easy' ? (
     <MultipleChoice city={city} pool={pool} onGuess={onGuess} />
   ) : (
-    <AutocompleteInput city={city} onGuess={onGuess} />
+    <AutocompleteInput city={city} pool={pool} onGuess={onGuess} />
   )
 }
