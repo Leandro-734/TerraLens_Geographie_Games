@@ -1,4 +1,4 @@
-# 🌍 Geo Games
+# TerraLens Games 🌍 (Geographie Games)
 
 A collection of **three geography mini-games** in one distributable web app, built with
 **Vite + React + TypeScript**. No API keys, no backend, no signup — satellite imagery comes from
