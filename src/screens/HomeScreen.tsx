@@ -60,7 +60,10 @@ export default function HomeScreen() {
                   className={`segment${cityPool === p ? ' segmentActive' : ''}`}
                   onClick={() => setSettings({ cityPool: p })}
                 >
-                  {p === 'famous' ? `Famous ${FAMOUS_CITY_COUNT}` : `All ${CITIES.length}`}
+                  {p === 'famous' ? 'Famous' : 'All'}
+                  <span className="cityPoolCount">
+                    {p === 'famous' ? ` ${FAMOUS_CITY_COUNT}` : ` ${CITIES.length}`}
+                  </span>
                 </button>
               ))}
             </div>

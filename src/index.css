@@ -24,6 +24,8 @@
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
   --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.08);
   --blur: blur(14px) saturate(120%);
+  --keyboard-inset: 0px;
+  --keyboard-viewport-offset: 0px;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
     sans-serif;
   color-scheme: light;
@@ -67,6 +69,16 @@ button {
   align-items: center;
   justify-content: center;
   padding: 24px 16px;
+}
+
+/* The settings card can still scroll when needed, but it should not show the
+   platform scrollbar beside the region picker. */
+.screen.home {
+  scrollbar-width: none;
+}
+
+.screen.home::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
@@ -1494,6 +1506,13 @@ button {
     /* Height of the brand rail once it lies across the bottom of the screen. */
     --rail-h: calc(54px + env(safe-area-inset-bottom, 0px));
   }
+  /* The ad itself is a compact pill centred by its provider inside our iframe.
+     A desktop-width wrapper left a large invisible gutter to its right on
+     phones, so keep the mobile wrapper close to the pill's actual width. */
+  .menuAd {
+    right: max(6px, env(safe-area-inset-right, 0px));
+    width: min(160px, calc(100vw - 12px));
+  }
   /* Fitting the whole 1440-wide frame into a phone's width leaves the hero a
      thin band across the top of a tall screen. Scale to a narrower centre
      slice of the frame instead: the wordmark and astronaut (which live well
@@ -1970,6 +1989,9 @@ button {
   .card {
     padding: 22px;
   }
+  .cityPoolCount {
+    display: none;
+  }
   .title {
     font-size: 1.7rem;
   }
@@ -2020,6 +2042,16 @@ button {
     width: calc(100% - 12px);
     padding: 12px;
     bottom: max(8px, env(safe-area-inset-bottom));
+  }
+  /* Focusing a text answer must not pan the entire map above the on-screen
+     keyboard. The shared input hook supplies these visual-viewport values:
+     counter the browser pan on the game, and move just the answer panel above
+     the keyboard. */
+  html.answerInputFocused .round {
+    transform: translateY(var(--keyboard-viewport-offset));
+  }
+  html.answerInputFocused .guessPanel {
+    bottom: calc(max(8px, env(safe-area-inset-bottom)) + var(--keyboard-inset));
   }
   .choice {
     padding: 11px 12px;

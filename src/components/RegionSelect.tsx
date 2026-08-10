@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { CONTINENTS, SUB_REGIONS } from '../lib/cities'
 import type { Region, SubRegion } from '../lib/cities'
 import Flag from './Flag'
@@ -60,6 +60,7 @@ export default function RegionSelect({
   onChange: (value: Value) => void
 }) {
   const [open, setOpen] = useState(false)
+  const [menuMaxHeight, setMenuMaxHeight] = useState<number>()
   const ref = useRef<HTMLDivElement>(null)
 
   const current = ALL_OPTIONS.find((o) => o.value === value) ?? ALL_OPTIONS[0]
@@ -77,6 +78,33 @@ export default function RegionSelect({
     return () => {
       document.removeEventListener('mousedown', onDown)
       document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  // The menu is positioned outside the form so opening it never makes the
+  // page taller. Limit it to the remaining visible viewport and let the menu
+  // itself scroll when more regions are available below.
+  useLayoutEffect(() => {
+    if (!open) {
+      setMenuMaxHeight(undefined)
+      return
+    }
+
+    const updateMenuMaxHeight = () => {
+      const bottom = ref.current?.getBoundingClientRect().bottom
+      if (bottom === undefined) return
+      const viewportHeight = window.visualViewport?.height ?? window.innerHeight
+      setMenuMaxHeight(Math.max(0, Math.floor(viewportHeight - bottom - 12)))
+    }
+
+    updateMenuMaxHeight()
+    window.addEventListener('resize', updateMenuMaxHeight)
+    window.addEventListener('scroll', updateMenuMaxHeight, true)
+    window.visualViewport?.addEventListener('resize', updateMenuMaxHeight)
+    return () => {
+      window.removeEventListener('resize', updateMenuMaxHeight)
+      window.removeEventListener('scroll', updateMenuMaxHeight, true)
+      window.visualViewport?.removeEventListener('resize', updateMenuMaxHeight)
     }
   }, [open])
 
@@ -99,7 +127,7 @@ export default function RegionSelect({
       </button>
 
       {open && (
-        <ul className="dropdownMenu" role="listbox">
+        <ul className="dropdownMenu" role="listbox" style={{ maxHeight: menuMaxHeight }}>
           {GROUPS.map((group, gi) => (
             <li key={group.label ?? gi}>
               {group.label && <div className="dropdownGroupLabel">{group.label}</div>}

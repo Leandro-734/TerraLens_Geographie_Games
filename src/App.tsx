@@ -11,7 +11,8 @@ export default function App() {
         <Route path="/" element={<MenuScreen />} />
         <Route path="/satellite" element={<SatelliteGame />} />
         <Route path="/locate" element={<LocateGame />} />
-        <Route path="/travle" element={<TravleGame />} />
+        <Route path="/country-trail" element={<TravleGame />} />
+        <Route path="/travle" element={<Navigate to="/country-trail" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
