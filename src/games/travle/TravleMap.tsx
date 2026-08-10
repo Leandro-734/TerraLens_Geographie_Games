@@ -8,6 +8,11 @@ type FC = { type: 'FeatureCollection'; features: Feat[] }
 
 const CENTROID = new Map(COUNTRIES.map((c) => [c.code, [c.lon, c.lat] as [number, number]]))
 
+// At the map's opening zoom, countries below half a degree in both dimensions
+// are at most about one pixel wide. Use a centroid marker while one of these
+// countries is highlighted so Monaco, Liechtenstein, and Andorra stay visible.
+const SMALL_COUNTRY_MAX_SPAN = 0.5
+
 const POINTS: FC = {
   type: 'FeatureCollection',
   features: COUNTRIES.map((c) => ({
@@ -86,6 +91,7 @@ export default function TravleMap(props: Props) {
   propsRef.current = props
   const readyRef = useRef(false)
   const polyCodesRef = useRef<Set<string>>(new Set())
+  const smallCodesRef = useRef<Set<string>>(new Set())
   const bboxRef = useRef<Map<string, [number, number, number, number]>>(new Map())
   const lastFitRef = useRef('')
 
@@ -97,10 +103,34 @@ export default function TravleMap(props: Props) {
     map.setPaintProperty('country-fill', 'fill-opacity', fillOpacity(p, baseFillOpacity(p)))
     map.setPaintProperty('country-dot', 'circle-color', fillColor(p))
 
-    const highlighted = [p.startCode, p.endCode, ...p.route, ...p.redundant, ...p.off]
-    const missing = highlighted.filter((c) => c && !polyCodesRef.current.has(c))
+    const highlighted = [
+      p.startCode,
+      p.endCode,
+      ...p.route,
+      ...p.redundant,
+      ...p.off,
+      ...(p.hints.nextOutline && p.nextCode ? [p.nextCode] : []),
+    ]
+    const markerCodes = new Set(
+      highlighted.filter(
+        (code) => code && (!polyCodesRef.current.has(code) || smallCodesRef.current.has(code)),
+      ),
+    )
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    map.setFilter('country-dot', ['in', ['get', 'code'], ['literal', missing]] as any)
+    map.setFilter('country-dot', ['in', ['get', 'code'], ['literal', [...markerCodes]]] as any)
+    const outlinedCode = p.hints.nextOutline && p.nextCode ? p.nextCode : '__none__'
+    map.setPaintProperty('country-dot', 'circle-stroke-color', [
+      'case',
+      ['==', ['get', 'code'], outlinedCode],
+      '#9bacc5',
+      '#070d18',
+    ])
+    map.setPaintProperty('country-dot', 'circle-stroke-width', [
+      'case',
+      ['==', ['get', 'code'], outlinedCode],
+      2.25,
+      1.5,
+    ])
 
     const vis = (id: string, on: boolean) => map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none')
     vis('land-line', p.hints.continents || p.hints.allOutlines || p.revealAll)
@@ -226,7 +256,12 @@ export default function TravleMap(props: Props) {
         }
         if (g?.type === 'Polygon') (g.coordinates as number[][][]).forEach(scan)
         else if (g?.type === 'MultiPolygon') (g.coordinates as number[][][][]).forEach((poly) => poly.forEach(scan))
-        if (Number.isFinite(w)) bb.set(code, [w, s, e, n])
+        if (Number.isFinite(w)) {
+          bb.set(code, [w, s, e, n])
+          if (e - w <= SMALL_COUNTRY_MAX_SPAN && n - s <= SMALL_COUNTRY_MAX_SPAN) {
+            smallCodesRef.current.add(code)
+          }
+        }
       }
       bboxRef.current = bb
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -327,6 +362,7 @@ export default function TravleMap(props: Props) {
       map.remove()
       mapRef.current = null
       readyRef.current = false
+      smallCodesRef.current.clear()
       lastFitRef.current = ''
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
