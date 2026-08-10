@@ -8,8 +8,7 @@ import type { RefObject } from 'react'
  */
 export function useStickyFocus(ref: RefObject<HTMLInputElement | null>) {
   useEffect(() => {
-    if (window.matchMedia('(max-width: 700px), (pointer: coarse)').matches) return
-
+    const isTouchLayout = window.matchMedia('(max-width: 700px), (pointer: coarse)').matches
     const input = ref.current
     const root = document.documentElement
     const viewport = window.visualViewport
@@ -45,18 +44,22 @@ export function useStickyFocus(ref: RefObject<HTMLInputElement | null>) {
     }
     const onEvent = () => setTimeout(reclaim, 0)
 
-    input?.focus({ preventScroll: true })
+    if (!isTouchLayout) input?.focus({ preventScroll: true })
     updateKeyboardViewport()
-    window.addEventListener('focusout', onEvent)
-    window.addEventListener('pointerup', onEvent, true)
+    if (!isTouchLayout) {
+      window.addEventListener('focusout', onEvent)
+      window.addEventListener('pointerup', onEvent, true)
+    }
     window.addEventListener('resize', updateKeyboardViewport)
     viewport?.addEventListener('resize', updateKeyboardViewport)
     viewport?.addEventListener('scroll', updateKeyboardViewport)
     input?.addEventListener('focus', updateKeyboardViewport)
     input?.addEventListener('blur', updateKeyboardViewport)
     return () => {
-      window.removeEventListener('focusout', onEvent)
-      window.removeEventListener('pointerup', onEvent, true)
+      if (!isTouchLayout) {
+        window.removeEventListener('focusout', onEvent)
+        window.removeEventListener('pointerup', onEvent, true)
+      }
       window.removeEventListener('resize', updateKeyboardViewport)
       viewport?.removeEventListener('resize', updateKeyboardViewport)
       viewport?.removeEventListener('scroll', updateKeyboardViewport)
