@@ -97,7 +97,6 @@ export default function AutocompleteInput({
         <input
           ref={inputRef}
           className="cityInput"
-          autoFocus
           value={query}
           placeholder="Type the city name…"
           autoComplete="off"

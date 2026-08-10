@@ -1506,6 +1506,31 @@ button {
     /* Height of the brand rail once it lies across the bottom of the screen. */
     --rail-h: calc(54px + env(safe-area-inset-bottom, 0px));
   }
+  /* Country Trail is a fixed map game. Android's virtual keyboard otherwise
+     pans the visual viewport and creates a scrollable document; constrain the
+     game to the visible viewport reported by the component instead. */
+  html.countryTrailActive,
+  html.countryTrailActive body {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  html.countryTrailActive .app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--country-trail-viewport-height, 100%);
+    overflow: hidden;
+    transform: translateY(var(--country-trail-viewport-offset, 0px));
+  }
+  /* The Country Trail app itself already follows the visible viewport, so it
+     must not also inherit the shared input's panel lift/pan compensation. */
+  html.countryTrailActive.answerInputFocused .round {
+    transform: none;
+  }
+  html.countryTrailActive.answerInputFocused .guessPanel {
+    bottom: max(8px, env(safe-area-inset-bottom));
+  }
   /* The ad itself is a compact pill centred by its provider inside our iframe.
      A desktop-width wrapper left a large invisible gutter to its right on
      phones, so keep the mobile wrapper close to the pill's actual width. */

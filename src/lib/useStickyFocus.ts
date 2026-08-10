@@ -8,6 +8,8 @@ import type { RefObject } from 'react'
  */
 export function useStickyFocus(ref: RefObject<HTMLInputElement | null>) {
   useEffect(() => {
+    if (window.matchMedia('(max-width: 700px), (pointer: coarse)').matches) return
+
     const input = ref.current
     const root = document.documentElement
     const viewport = window.visualViewport
@@ -43,6 +45,7 @@ export function useStickyFocus(ref: RefObject<HTMLInputElement | null>) {
     }
     const onEvent = () => setTimeout(reclaim, 0)
 
+    input?.focus({ preventScroll: true })
     updateKeyboardViewport()
     window.addEventListener('focusout', onEvent)
     window.addEventListener('pointerup', onEvent, true)

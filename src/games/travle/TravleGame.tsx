@@ -1,4 +1,4 @@
-import { Suspense, lazy, useMemo, useRef, useState } from 'react'
+import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react'
 import { useAppStore } from '../../store/appStore'
 import { useGameNav } from '../../lib/nav'
 import { recentKeys, useHistoryStore } from '../../store/historyStore'
@@ -60,6 +60,35 @@ export default function TravleGame() {
   const [resultView, setResultView] = useState<'mine' | 'best'>('mine')
   const inputRef = useRef<HTMLInputElement>(null)
   useStickyFocus(inputRef)
+
+  // Android usually shrinks and pans only the visual viewport for the virtual
+  // keyboard. Pin Country Trail to that visible portion so the map cannot turn
+  // into a scrollable page when its country input is focused.
+  useEffect(() => {
+    const root = document.documentElement
+    const viewport = window.visualViewport
+    const updateViewport = () => {
+      root.style.setProperty(
+        '--country-trail-viewport-height',
+        `${Math.round(viewport?.height ?? window.innerHeight)}px`,
+      )
+      root.style.setProperty('--country-trail-viewport-offset', `${Math.round(viewport?.offsetTop ?? 0)}px`)
+    }
+
+    root.classList.add('countryTrailActive')
+    updateViewport()
+    window.addEventListener('resize', updateViewport)
+    viewport?.addEventListener('resize', updateViewport)
+    viewport?.addEventListener('scroll', updateViewport)
+    return () => {
+      window.removeEventListener('resize', updateViewport)
+      viewport?.removeEventListener('resize', updateViewport)
+      viewport?.removeEventListener('scroll', updateViewport)
+      root.classList.remove('countryTrailActive')
+      root.style.removeProperty('--country-trail-viewport-height')
+      root.style.removeProperty('--country-trail-viewport-offset')
+    }
+  }, [])
 
   const budget = puzzle ? puzzle.par + 3 : 0
   const guessesLeft = Math.max(0, budget - guessed.length)
@@ -467,7 +496,6 @@ export default function TravleGame() {
                 <input
                   ref={inputRef}
                   className="cityInput"
-                  autoFocus
                   value={query}
                   placeholder="Name a country…"
                   autoComplete="off"
