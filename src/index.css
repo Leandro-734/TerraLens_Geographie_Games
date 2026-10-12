@@ -1049,24 +1049,6 @@ button {
   color: #000;
 }
 
-/* Sandboxed reciprocal-ad widget. It stays on the landing screen so no
-   third-party content or interaction competes with active gameplay. */
-.menuAd {
-  position: absolute;
-  top: clamp(12px, 2vw, 24px);
-  right: clamp(12px, 2vw, 24px);
-  z-index: 30;
-  width: min(260px, calc(100vw - 24px));
-  height: 50px;
-}
-
-.menuAdFrame {
-  display: block;
-  width: 100%;
-  height: 50px;
-  border: 0;
-}
-
 /* ---------- parallax hero (layered Figma export, 1440×810 canvas) ---------- */
 .hero {
   position: relative;
@@ -1530,13 +1512,6 @@ button {
   }
   html.countryTrailActive.answerInputFocused .guessPanel {
     bottom: max(8px, env(safe-area-inset-bottom));
-  }
-  /* The ad itself is a compact pill centred by its provider inside our iframe.
-     A desktop-width wrapper left a large invisible gutter to its right on
-     phones, so keep the mobile wrapper close to the pill's actual width. */
-  .menuAd {
-    right: max(6px, env(safe-area-inset-right, 0px));
-    width: min(160px, calc(100vw - 12px));
   }
   /* Fitting the whole 1440-wide frame into a phone's width leaves the hero a
      thin band across the top of a tall screen. Scale to a narrower centre
